@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileMenu();
   initActiveNavLinks();
   initParticles();
+  initCvModal();
 });
 
 /* ══ TOAST ══ */
@@ -501,3 +502,57 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     }
   });
 });
+
+/* ══ IN-PAGE CV VIEWER MODAL ══ */
+function initCvModal() {
+  const modal = document.getElementById('cvModal');
+  const iframe = document.getElementById('cvModalIframe');
+  const closeBtn = document.getElementById('closeCvModal');
+  if (!modal) return;
+
+  function openCvModal() {
+    if (iframe && (!iframe.src || iframe.src === window.location.href || iframe.src.endsWith('index.html'))) {
+      const dataSrc = iframe.getAttribute('data-src');
+      if (dataSrc) iframe.src = dataSrc;
+    }
+    modal.classList.add('active');
+    modal.setAttribute('aria-hidden', 'false');
+    setTimeout(() => {
+      document.body.style.overflow = 'hidden';
+    }, 10);
+    if (closeBtn) closeBtn.focus();
+  }
+
+  function closeCvModal() {
+    modal.classList.remove('active');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  // Intercept all triggers (Navbar, Mobile Menu, Hero, Contact CTA, Contact Socials)
+  document.querySelectorAll('[data-cv-modal="true"], .open-cv-modal').forEach(trigger => {
+    trigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      openCvModal();
+    });
+  });
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closeCvModal);
+  }
+
+  // Close when clicking the backdrop outside the container
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      closeCvModal();
+    }
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      closeCvModal();
+    }
+  });
+}
+
