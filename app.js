@@ -263,31 +263,88 @@ function initProjectFilter() {
   });
 }
 
-/* ══ CONTACT FORM (EmailJS) ══ */
+/* ══ CONTACT FORM (EmailJS + Strict Validation) ══ */
 function initContactForm() {
   const form = document.getElementById('contactForm');
   if (!form) return;
+
+  const nameInput = document.getElementById('from_name');
+  const emailInput = document.getElementById('from_email');
+  const subjectInput = document.getElementById('subject');
+  const messageInput = document.getElementById('message');
+  const btn = document.getElementById('submitBtn');
+
+  const fields = [nameInput, emailInput, subjectInput, messageInput].filter(Boolean);
+
+  // Effacement dynamique de l'état d'erreur dès la saisie
+  fields.forEach(field => {
+    field.addEventListener('input', () => {
+      field.classList.remove('input-error');
+    });
+  });
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     // Honeypot check for bots
     const gotcha = document.getElementById('_gotcha');
-    if (gotcha && gotcha.value) {
+    if (gotcha && gotcha.value.trim() !== '') {
       showToast('Message transmis ✓', 'success');
       form.reset();
       return;
     }
 
-    const btn = document.getElementById('submitBtn');
+    // ── VALIDATION STRICTE CÔTÉ CLIENT ──
+    const errors = [];
+    fields.forEach(f => f.classList.remove('input-error'));
+
+    const nameVal = nameInput ? nameInput.value.trim() : '';
+    const emailVal = emailInput ? emailInput.value.trim() : '';
+    const subjVal = subjectInput ? subjectInput.value.trim() : '';
+    const msgVal = messageInput ? messageInput.value.trim() : '';
+
+    if (!nameVal || nameVal.length < 2) {
+      errors.push({ field: nameInput, message: 'Veuillez renseigner votre nom complet ou organisation.' });
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+    if (!emailVal) {
+      errors.push({ field: emailInput, message: 'Veuillez renseigner votre adresse email.' });
+    } else if (!emailRegex.test(emailVal)) {
+      errors.push({ field: emailInput, message: 'Veuillez saisir une adresse email valide (ex: contact@domaine.com).' });
+    }
+
+    if (!subjVal || subjVal.length < 3) {
+      errors.push({ field: subjectInput, message: "Veuillez préciser l'objet de votre prise de contact." });
+    }
+
+    if (!msgVal) {
+      errors.push({ field: messageInput, message: 'Veuillez rédiger votre message.' });
+    } else if (msgVal.length < 10) {
+      errors.push({ field: messageInput, message: 'Votre message est trop court (10 caractères minimum).' });
+    }
+
+    // S'il y a des erreurs, on bloque l'envoi immédiatement
+    if (errors.length > 0) {
+      errors.forEach(err => {
+        if (err.field) err.field.classList.add('input-error');
+      });
+      if (errors[0].field) {
+        errors[0].field.focus();
+      }
+      showToast(errors[0].message, 'error');
+      return; // Bloque toute soumission et tout EmailJS
+    }
+
+    // ── ENVOI DES DONNÉES VALIDÉES ──
     btn.textContent = 'Envoi en cours...';
     btn.disabled = true;
 
     const templateParams = {
-      from_name:  document.getElementById('from_name').value,
-      from_email: document.getElementById('from_email').value,
-      subject:    document.getElementById('subject').value,
-      message:    document.getElementById('message').value,
+      from_name:  nameVal,
+      from_email: emailVal,
+      subject:    subjVal,
+      message:    msgVal,
     };
 
     try {
@@ -307,9 +364,19 @@ function initContactForm() {
 
     } catch (error) {
       console.error('EmailJS error:', error);
-      showToast("Erreur d'envoi. Contactez-moi par email directement.", 'error');
-      btn.textContent = 'Réessayer →';
-      btn.disabled = false;
+      showToast("Service automatisé indisponible. Redirection vers votre messagerie...", 'error');
+      
+      const subject = encodeURIComponent(`[Contact Portfolio] ${templateParams.subject || 'Prise de contact'}`);
+      const body = encodeURIComponent(
+        `Bonjour Soumailou,\n\n${templateParams.message}\n\n---\nExpéditeur : ${templateParams.from_name}\nEmail : ${templateParams.from_email}`
+      );
+      const mailtoUrl = `mailto:soumailou.kailou@gmail.com?subject=${subject}&body=${body}`;
+      
+      setTimeout(() => {
+        window.location.href = mailtoUrl;
+        btn.textContent = 'Ouvrir messagerie ✉️';
+        btn.disabled = false;
+      }, 1000);
     }
   });
 }
