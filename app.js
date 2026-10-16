@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initTypewriter();
   initProjectFilter();
   initContactForm();
+  initCopyEmail();
   initMobileMenu();
   initActiveNavLinks();
   initParticles();
@@ -270,6 +271,14 @@ function initContactForm() {
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
+    // Honeypot check for bots
+    const gotcha = document.getElementById('_gotcha');
+    if (gotcha && gotcha.value) {
+      showToast('Message transmis ✓', 'success');
+      form.reset();
+      return;
+    }
+
     const btn = document.getElementById('submitBtn');
     btn.textContent = 'Envoi en cours...';
     btn.disabled = true;
@@ -291,7 +300,7 @@ function initContactForm() {
       form.reset();
 
       setTimeout(() => {
-        btn.textContent = 'Envoyer le message →';
+        btn.textContent = 'Transmettre le message →';
         btn.style.background = '';
         btn.disabled = false;
       }, 4000);
@@ -301,6 +310,35 @@ function initContactForm() {
       showToast("Erreur d'envoi. Contactez-moi par email directement.", 'error');
       btn.textContent = 'Réessayer →';
       btn.disabled = false;
+    }
+  });
+}
+
+/* ══ COPY EMAIL HELPER ══ */
+function initCopyEmail() {
+  const copyBtn = document.getElementById('copyEmailBtn');
+  if (!copyBtn) return;
+
+  copyBtn.addEventListener('click', async () => {
+    const email = 'soumailou.kailou@gmail.com';
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        await navigator.clipboard.writeText(email);
+      } else {
+        const temp = document.createElement('textarea');
+        temp.value = email;
+        document.body.appendChild(temp);
+        temp.select();
+        document.execCommand('copy');
+        document.body.removeChild(temp);
+      }
+      showToast('Adresse email copiée dans le presse-papier !', 'success');
+      copyBtn.textContent = 'Copié ✓';
+      setTimeout(() => {
+        copyBtn.innerHTML = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg> Copier';
+      }, 3000);
+    } catch (err) {
+      showToast('Impossible de copier automatiquement.', 'error');
     }
   });
 }

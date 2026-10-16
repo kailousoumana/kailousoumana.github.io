@@ -35,6 +35,10 @@
   <!-- ══ EMAILJS ══ -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
 
+  <!-- ══ FAVICON ══ -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="alternate icon" href="favicon.svg">
+
   <!-- ══ STYLES ══ -->
   <link rel="stylesheet" href="style.css">
 
@@ -75,6 +79,9 @@
 
 <body>
 
+<!-- ══ ACCESSIBILITY SKIP LINK ══ -->
+<a href="#hero" class="skip-link">Aller au contenu principal</a>
+
 <!-- ══ TOAST ══ -->
 <div class="toast" id="toast" aria-live="polite"></div>
 
@@ -86,6 +93,7 @@
 
   <ul class="nav-links" role="list">
     <li><a href="#about">À propos</a></li>
+    <li><a href="#philosophy">Philosophie</a></li>
     <li><a href="#expertise">Expertise</a></li>
     <li><a href="#projects">Projets</a></li>
     <li><a href="#experience">Expérience</a></li>
@@ -95,7 +103,9 @@
   </ul>
 
   <div class="nav-right">
-    <a href="CV_SOUMAILOU_SOUMANA.pdf" class="nav-cv" download aria-label="Télécharger le CV">↓ CV</a>
+    <a href="CV_SOUMAILOU_SOUMANA.pdf" class="nav-cv" download aria-label="Télécharger le CV de Soumailou Soumana">
+      ↓ CV <span style="font-size:0.6rem;opacity:0.75;font-family:var(--font-mono);">(PDF)</span>
+    </a>
   </div>
 
   <button class="hamburger" id="hamburger" aria-label="Ouvrir le menu" aria-expanded="false">
@@ -107,6 +117,7 @@
 <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
   <ul>
     <li><a href="#about" class="mob-link">À propos</a></li>
+    <li><a href="#philosophy" class="mob-link">Philosophie</a></li>
     <li><a href="#expertise" class="mob-link">Expertise</a></li>
     <li><a href="#projects" class="mob-link">Projets</a></li>
     <li><a href="#experience" class="mob-link">Expérience</a></li>
@@ -114,7 +125,7 @@
     <li><a href="#services" class="mob-link">Ingénierie</a></li>
     <li><a href="#contact" class="mob-link">Contact</a></li>
   </ul>
-  <a href="CV_SOUMAILOU_SOUMANA.pdf" class="mob-cta" download>↓ Télécharger le CV</a>
+  <a href="CV_SOUMAILOU_SOUMANA.pdf" class="mob-cta" download>↓ Télécharger le CV (PDF · Oct 2026)</a>
 </div>
 
 <!-- ══════════════════════════════════════
@@ -301,9 +312,102 @@
     </div>
   </div>
 </section>
+
 <!-- ══════════════════════════════════════
-     EXPERTISE TECHNIQUE
+     PHILOSOPHIE D'INGÉNIEUR
 ══════════════════════════════════════ -->
+<section id="philosophy" class="section" aria-label="Philosophie d'ingénieur">
+  <div class="container">
+    <div class="sec-eyebrow reveal">Vision & Démarche</div>
+    <h2 class="sec-title reveal">Philosophie <span class="gradient-text">d'Ingénieur</span></h2>
+    <p class="sec-subtitle reveal delay-1">Quatre convictions fondamentales qui guident chacune de mes décisions d'architecture, d'industrialisation et de sécurité logicielle.</p>
+
+    <div class="philo-grid">
+
+      <!-- Pilier 1 : Résilience & Haute Disponibilité -->
+      <div class="philo-card reveal">
+        <div class="philo-header">
+          <div class="philo-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+          </div>
+          <span class="philo-num">// PILIER 01</span>
+        </div>
+        <div class="philo-title">Résilience & Haute Disponibilité</div>
+        <p class="philo-desc">
+          Concevoir chaque brique logicielle selon le principe de défaillance inévitable (<em>Design for Failure</em>). Découplage strict des microservices, disjoncteurs applicatifs (Circuit Breaker), redondance dynamique, sondes de santé Kubernetes (liveness/readiness) et reprise d'activité sans perte de données.
+        </p>
+        <div class="philo-quote">// Règle d'or : Aucun point de défaillance unique (Zero SPOF)</div>
+      </div>
+
+      <!-- Pilier 2 : Intégrité & Zéro-Défaut -->
+      <div class="philo-card reveal delay-1">
+        <div class="philo-header">
+          <div class="philo-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 11 12 14 22 4"/></svg>
+          </div>
+          <span class="philo-num">// PILIER 02</span>
+        </div>
+        <div class="philo-title">Intégrité Absolue & Zéro-Défaut</div>
+        <p class="philo-desc">
+          Dans les flux financiers et transactionnels critiques, la cohérence n'est jamais négociable. Application systématique du grand livre comptable en partie double, transactions ACID, gestion rigoureuse des idempotences et traçabilité immuable de chaque événement métier via le patron Outbox.
+        </p>
+        <div class="philo-quote">// Règle d'or : Chaque centime et chaque bit sont audités et traçables</div>
+      </div>
+
+      <!-- Pilier 3 : Sécurité par Conception (Security by Design) -->
+      <div class="philo-card reveal delay-2">
+        <div class="philo-header">
+          <div class="philo-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          </div>
+          <span class="philo-num">// PILIER 03</span>
+        </div>
+        <div class="philo-title">Sécurité par Conception (Zero-Trust)</div>
+        <p class="philo-desc">
+          La sécurité ne se superpose pas à posteriori : elle s'ancre dès le schéma d'architecture. Gestion centralisée des identités (Keycloak OIDC), validation asymétrique des jetons JWT (RS256/JWKS), gestion dynamique des secrets via HashiCorp Vault et NetworkPolicies Kubernetes strictes.
+        </p>
+        <div class="philo-quote">// Règle d'or : Vérifier systématiquement, ne faire confiance à aucun périmètre</div>
+      </div>
+
+      <!-- Pilier 4 : Rigueur Opérationnelle & Collectif -->
+      <div class="philo-card reveal delay-3">
+        <div class="philo-header">
+          <div class="philo-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <span class="philo-num">// PILIER 04</span>
+        </div>
+        <div class="philo-title">Rigueur Opérationnelle & Collectif</div>
+        <p class="philo-desc">
+          L'ingénierie logicielle d'envergure est une discipline d'équipe. Documentation vivante (OpenAPI/Swagger), revues de code systématiques et constructives, automatisation continue (GitLab CI/CD) et culture du partage et du mentorat auprès des collaborateurs.
+        </p>
+        <div class="philo-quote">// Règle d'or : Un système n'est terminé que lorsqu'il est testé, documenté et transmissible</div>
+      </div>
+
+    </div>
+
+    <!-- ══════════════════════════════════════════════════════════════
+         VARIANTE ALTERNATIVE : IMPACT SOCIÉTAL & TERRITORIAL AU SAHEL
+         (À décommenter pour activer la variante axée sur l'impact humain local)
+    ══════════════════════════════════════════════════════════════
+    <div class="philo-card reveal delay-3 alternative-impact" style="margin-top:24px;border-color:rgba(16,185,129,0.3);">
+      <div class="philo-header">
+        <div class="philo-icon" style="background:rgba(16,185,129,0.12);color:var(--green-light);" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
+        <span class="philo-num" style="color:var(--green-light);">// PILIER IMPACT SOCIÉTAL</span>
+      </div>
+      <div class="philo-title">Impact Sociétal & Territorial au Sahel</div>
+      <p class="philo-desc">
+        Bâtir des technologies adaptées aux réalités du continent africain : tolérance aux coupures de connectivité, inclusion financière des populations non bancarisées et valorisation des filières productives locales (pastoralisme, commerce, agro-alimentaire). L'ingénierie doit servir le progrès humain et l'autonomie régionale.
+      </p>
+      <div class="philo-quote" style="color:var(--green-light);border-left-color:var(--green);background:rgba(16,185,129,0.06);">// Vocation : La technologie comme levier d'émancipation et d'inclusion</div>
+    </div>
+    ══════════════════════════════════════════════════════════════ -->
+
+  </div>
+</section>
+
 <section id="expertise" class="section" aria-label="Expertise technique">
   <div class="container">
     <div class="sec-eyebrow reveal">Compétences d'ingénierie</div>
@@ -314,7 +418,9 @@
 
       <!-- Backend & Microservices -->
       <div class="expertise-card backend reveal">
-        <div class="exp-icon backend" aria-hidden="true">⚙️</div>
+        <div class="exp-icon backend" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+        </div>
         <div class="exp-category">Backend & Architecture</div>
         <div class="exp-title">Services & Microservices</div>
         <p class="exp-desc">Conception d'architectures microservices distribuées, APIs REST modulaires, logique transactionnelle critique (grand livre en partie double) et communication asynchrone par événements.</p>
@@ -330,7 +436,9 @@
 
       <!-- Frontend -->
       <div class="expertise-card frontend reveal delay-1">
-        <div class="exp-icon frontend" aria-hidden="true">🖥️</div>
+        <div class="exp-icon frontend" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
         <div class="exp-category">Frontend Moderne</div>
         <div class="exp-title">Interfaces Utilisateur & Portails</div>
         <p class="exp-desc">Développement d'applications Single Page (SPA) réactives, modulaires et ergonomiques. Dashboards analytiques, intercepteurs HTTP multi-jetons et contrôle d'accès client RBAC.</p>
@@ -346,7 +454,9 @@
 
       <!-- DevOps & Cloud-Native -->
       <div class="expertise-card devops reveal delay-2">
-        <div class="exp-icon devops" aria-hidden="true">🚀</div>
+        <div class="exp-icon devops" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>
+        </div>
         <div class="exp-category">DevOps & Cloud-Native</div>
         <div class="exp-title">CI/CD & Déploiement Continu</div>
         <p class="exp-desc">Industrialisation des pipelines GitLab CI/CD à 6 étapes (porte de publication, détection de secrets Gitleaks, validation Kubeconform), conteneurs immuables et déploiement zéro-downtime.</p>
@@ -362,7 +472,9 @@
 
       <!-- Intelligence Artificielle -->
       <div class="expertise-card archi reveal delay-1">
-        <div class="exp-icon archi" aria-hidden="true">🧠</div>
+        <div class="exp-icon archi" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>
+        </div>
         <div class="exp-category">Intelligence Artificielle</div>
         <div class="exp-title">OCR, Vision & IA Appliquée</div>
         <p class="exp-desc">Intégration opérationnelle de microservices d'IA dans les flux métiers : OCR de documents officiels, reconnaissance faciale vectorielle, détection de vivacité anti-usurpation et évaluation de modèles Vision-Langage.</p>
@@ -377,7 +489,9 @@
 
       <!-- Bases de données -->
       <div class="expertise-card database reveal delay-2">
-        <div class="exp-icon database" aria-hidden="true">🗄️</div>
+        <div class="exp-icon database" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+        </div>
         <div class="exp-category">Bases de données</div>
         <div class="exp-title">Persistance & Intégrité des données</div>
         <p class="exp-desc">Modélisation relationnelle stricte, intégrité référentielle, transactions financières ACID, migrations de schémas automatisées et cache distribué haute performance.</p>
@@ -393,7 +507,9 @@
 
       <!-- Sécurité, Qualité & Méthodes -->
       <div class="expertise-card domain reveal delay-3">
-        <div class="exp-icon domain" aria-hidden="true">🛡️</div>
+        <div class="exp-icon domain" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 11 12 14 22 4"/></svg>
+        </div>
         <div class="exp-category">Sécurité & Qualité</div>
         <div class="exp-title">Identité, Sécurité & Méthodes</div>
         <p class="exp-desc">Gestion centralisée des identités (Keycloak OIDC / OAuth2, validation asymétrique JWT RS256 / JWKS), secrets dynamiques (Vault), tests automatisés (Jest, JUnit) et documentation OpenAPI.</p>
@@ -560,7 +676,9 @@
       <div class="project-card featured reveal" data-category="fintech devops ai">
         <div style="flex:1;min-width:0;">
           <div class="proj-header">
-            <div class="proj-icon" aria-hidden="true">📱</div>
+            <div class="proj-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+            </div>
             <span class="proj-status confidential">● Production confidentielle</span>
           </div>
           <div class="proj-url">Opérateur de Télécommunications · Dev4smart</div>
@@ -585,6 +703,51 @@
               <span class="proj-metric-lbl">OCR & Biométrie</span>
             </div>
           </div>
+
+          <!-- SCHÉMA D'ARCHITECTURE INTÉGRÉ -->
+          <div class="arch-blueprint">
+            <div class="arch-blueprint-header">
+              <div class="arch-blueprint-title">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                Topologie Système · 13 Microservices Déployés
+              </div>
+              <span class="arch-blueprint-badge">K8s · Haute Disponibilité</span>
+            </div>
+            <div class="arch-layers">
+              <div class="arch-layer">
+                <span class="arch-layer-name">1. Ingress & Edge</span>
+                <div class="arch-layer-nodes">
+                  <span class="arch-node edge">Nginx Ingress WAF</span>
+                  <span class="arch-node edge">TLS Termination</span>
+                  <span class="arch-node edge">Rate Limiter</span>
+                </div>
+              </div>
+              <div class="arch-layer">
+                <span class="arch-layer-name">2. Sécurité & IAM</span>
+                <div class="arch-layer-nodes">
+                  <span class="arch-node sec">Keycloak OIDC</span>
+                  <span class="arch-node sec">HashiCorp Vault</span>
+                  <span class="arch-node sec">JWT RS256 / JWKS</span>
+                </div>
+              </div>
+              <div class="arch-layer">
+                <span class="arch-layer-name">3. Cœur de Domaine</span>
+                <div class="arch-layer-nodes">
+                  <span class="arch-node core">Spring Boot (Java 21) · Grand Livre</span>
+                  <span class="arch-node core">NestJS · Orchestration</span>
+                  <span class="arch-node ai">FastAPI · Inférence IA</span>
+                </div>
+              </div>
+              <div class="arch-layer">
+                <span class="arch-layer-name">4. Événements & Données</span>
+                <div class="arch-layer-nodes">
+                  <span class="arch-node data">Kafka (Patron Outbox)</span>
+                  <span class="arch-node data">Redis Cache</span>
+                  <span class="arch-node data">PostgreSQL (Flyway)</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div style="flex:1;min-width:0;">
@@ -595,7 +758,7 @@
             </div>
             <div class="proj-case-row">
               <span class="proj-case-label">Architecture</span>
-              <span class="proj-case-val">Cour financier en <strong>Spring Boot (Java 21)</strong>, orchestration en <strong>NestJS</strong>, microservices d'inférence en <strong>FastAPI (Python)</strong>, API Gateway Nginx et événements Kafka (patron Outbox).</span>
+              <span class="proj-case-val">Cœur financier en <strong>Spring Boot (Java 21)</strong>, orchestration en <strong>NestJS</strong>, microservices d'inférence en <strong>FastAPI (Python)</strong>, API Gateway Nginx et événements Kafka (patron Outbox).</span>
             </div>
             <div class="proj-case-row">
               <span class="proj-case-label">DevOps & Sécurité</span>
@@ -624,10 +787,12 @@
       <div class="project-card featured reveal delay-1" data-category="fintech devops ai">
         <div style="flex:1;min-width:0;">
           <div class="proj-header">
-            <div class="proj-icon" aria-hidden="true">💳</div>
+            <div class="proj-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+            </div>
             <span class="proj-status">● Live en production</span>
           </div>
-          <a href="http://www.smarpay.ne" class="proj-url" target="_blank" rel="noopener noreferrer" aria-label="Voir SmartPay en ligne">smarpay.ne ↗</a>
+          <a href="https://www.smartpay.ne" class="proj-url" target="_blank" rel="noopener noreferrer" aria-label="Voir SmartPay en ligne">smartpay.ne ↗</a>
           <div class="proj-name">SmartPay NE</div>
           <p class="proj-desc">Plateforme complète de paiement électronique multi-services pour le marché UEMOA (recharge, cash-in/out, encaissement marchand, cagnotte, e-commerce) conçue selon les exigences réglementaires et KYC de la BCEAO.</p>
           
@@ -648,6 +813,38 @@
               <span class="proj-metric-val">0 Downtime</span>
               <span class="proj-metric-lbl">Déploiement continu</span>
             </div>
+          </div>
+
+          <!-- CONSOLE INTERACTIVE KYC & IA -->
+          <div class="kyc-terminal" aria-label="Console d'inférence KYC et Intelligence Artificielle">
+            <div class="kyc-terminal-topbar">
+              <div class="kyc-terminal-dots">
+                <span class="kyc-dot red"></span>
+                <span class="kyc-dot yellow"></span>
+                <span class="kyc-dot green"></span>
+              </div>
+              <span class="kyc-terminal-title">fastapi-worker · ocr_kyc_inference.py</span>
+              <span class="kyc-terminal-badge">PaddleOCR + ONNX · 340ms</span>
+            </div>
+            <pre class="kyc-terminal-body"><code>{
+  <span class="json-key">"status"</span>: <span class="json-str">"KYC_VERIFIED_SUCCESS"</span>,
+  <span class="json-key">"document_type"</span>: <span class="json-str">"CNI_NIGER_BIOMETRIQUE"</span>,
+  <span class="json-key">"ocr_confidence"</span>: <span class="json-num">0.994</span>,
+  <span class="json-key">"extracted_fields"</span>: {
+    <span class="json-key">"prenom"</span>: <span class="json-str">"CONFIDENTIEL"</span>,
+    <span class="json-key">"nom"</span>: <span class="json-str">"BENEFICIAIRE"</span>,
+    <span class="json-key">"numero_cni"</span>: <span class="json-str">"NER-2024-****-88"</span>,
+    <span class="json-key">"date_expiration"</span>: <span class="json-str">"2033-08-20"</span>
+  },
+  <span class="json-key">"biometrics"</span>: {
+    <span class="json-key">"face_match_score"</span>: <span class="json-num">0.988</span>,
+    <span class="json-key">"anti_spoofing_liveness"</span>: <span class="json-bool">true</span>
+  },
+  <span class="json-key">"regulatory_compliance"</span>: {
+    <span class="json-key">"bceao_kyc_tier"</span>: <span class="json-num">2</span>,
+    <span class="json-key">"sanctions_list_check"</span>: <span class="json-str">"PASSED"</span>
+  }
+}</code></pre>
           </div>
         </div>
 
@@ -679,7 +876,7 @@
               <span class="tag amber">GitLab CI/CD</span>
               <span class="tag">KYC / IA</span>
             </div>
-            <a href="http://www.smarpay.ne" class="proj-link" target="_blank" rel="noopener noreferrer" aria-label="Voir SmartPay en ligne">Voir le portail ↗</a>
+            <a href="https://www.smartpay.ne" class="proj-link" target="_blank" rel="noopener noreferrer" aria-label="Voir SmartPay en ligne">Voir le portail ↗</a>
           </div>
         </div>
       </div>
@@ -687,7 +884,9 @@
       <!-- PROJET 3 : Plateformes Pastorales ENABEL -->
       <div class="project-card reveal delay-1" data-category="agri devops">
         <div class="proj-header">
-          <div class="proj-icon" aria-hidden="true">🌾</div>
+          <div class="proj-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+          </div>
           <span class="proj-status delivered">● Livré & Déployé</span>
         </div>
         <div class="proj-url">ENABEL / Projet Reel Mahita</div>
@@ -713,7 +912,9 @@
       <!-- PROJET 4 : A'Mansi -->
       <div class="project-card reveal delay-2" data-category="agri">
         <div class="proj-header">
-          <div class="proj-icon" aria-hidden="true">🥛</div>
+          <div class="proj-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="1" y="3" width="15" height="13" rx="2" ry="2"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          </div>
           <span class="proj-status">● Live</span>
         </div>
         <a href="http://www.amansi.app" class="proj-url" target="_blank" rel="noopener noreferrer">amansi.app ↗</a>
@@ -739,7 +940,9 @@
       <!-- PROJET 5 : DairyEduTech -->
       <div class="project-card reveal delay-1" data-category="agri">
         <div class="proj-header">
-          <div class="proj-icon" aria-hidden="true">🎓</div>
+          <div class="proj-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+          </div>
           <span class="proj-status">● Live</span>
         </div>
         <a href="http://www.dairyedutech.com" class="proj-url" target="_blank" rel="noopener noreferrer">dairyedutech.com ↗</a>
@@ -759,7 +962,9 @@
       <!-- PROJET 6 : Systèmes Académiques UAM -->
       <div class="project-card reveal delay-2" data-category="academic">
         <div class="proj-header">
-          <div class="proj-icon" aria-hidden="true">🏛️</div>
+          <div class="proj-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="3" y1="21" x2="21" y2="21"/><line x1="3" y1="10" x2="21" y2="10"/><polyline points="5 6 12 3 19 6"/><line x1="4" y1="10" x2="4" y2="21"/><line x1="20" y1="10" x2="20" y2="21"/><line x1="8" y1="14" x2="8" y2="17"/><line x1="12" y1="14" x2="12" y2="17"/><line x1="16" y1="14" x2="16" y2="17"/></svg>
+          </div>
           <span class="proj-status">● Live</span>
         </div>
         <a href="http://www.cvtheque.uam.edu.ne" class="proj-url" target="_blank" rel="noopener noreferrer">cvtheque.uam.edu.ne ↗</a>
@@ -778,7 +983,9 @@
       <!-- PROJET 7 : Sahfi SA -->
       <div class="project-card reveal delay-3" data-category="corporate">
         <div class="proj-header">
-          <div class="proj-icon" aria-hidden="true">🏢</div>
+          <div class="proj-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><line x1="9" y1="22" x2="9" y2="22.01"/><line x1="15" y1="22" x2="15" y2="22.01"/><line x1="9" y1="6" x2="9.01" y2="6"/><line x1="15" y1="6" x2="15.01" y2="6"/><line x1="9" y1="10" x2="9.01" y2="10"/><line x1="15" y1="10" x2="15.01" y2="10"/><line x1="9" y1="14" x2="9.01" y2="14"/><line x1="15" y1="14" x2="15.01" y2="14"/><line x1="9" y1="18" x2="9.01" y2="18"/><line x1="15" y1="18" x2="15.01" y2="18"/></svg>
+          </div>
           <span class="proj-status">● Live</span>
         </div>
         <a href="http://www.sahfi.net" class="proj-url" target="_blank" rel="noopener noreferrer">sahfi.net ↗</a>
@@ -904,7 +1111,9 @@
     <div class="edu-grid">
 
       <div class="edu-card reveal">
-        <div class="edu-icon" aria-hidden="true">🎓</div>
+        <div class="edu-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+        </div>
         <div>
           <div class="edu-degree">Master en Génie Logiciel (Bac+5)</div>
           <div class="edu-school">ESCEP-Niger (École Supérieure des Communications Électroniques et de la Poste, ex EST)</div>
@@ -920,7 +1129,9 @@
       </div>
 
       <div class="edu-card reveal delay-1">
-        <div class="edu-icon" aria-hidden="true">📡</div>
+        <div class="edu-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9"/><path d="M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5"/><circle cx="12" cy="12" r="2"/><path d="M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5"/><path d="M19.1 4.9C23 8.8 23 15.1 19.1 19"/></svg>
+        </div>
         <div>
           <div class="edu-degree">Licence Professionnelle en Génie Logiciel</div>
           <div class="edu-school">ESCEP-Niger (ex EST) — Mention Télécommunications & Informatique</div>
@@ -936,7 +1147,9 @@
       </div>
 
       <div class="edu-card reveal delay-2">
-        <div class="edu-icon" aria-hidden="true">🚀</div>
+        <div class="edu-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+        </div>
         <div>
           <div class="edu-degree">Spécialisations Continues & Pratique Industrielle</div>
           <div class="edu-school">Auto-formation, veille technologique & projets en production</div>
@@ -951,6 +1164,22 @@
       </div>
 
     </div>
+
+    <!-- BANNIÈRE DE RÉFÉRENCES PROFESSIONNELLES -->
+  <!--  <div class="ref-banner reveal">
+      <div class="ref-banner-content">
+        <div class="philo-icon" style="width:40px;height:40px;" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        </div>
+        <div class="ref-banner-text">
+          <strong>Références & Attestations de Bonne Fin d'Exécution :</strong>
+          Disponibles immédiatement sur demande auprès des directions techniques de <strong>Dev4smart</strong>, <strong>Zamani Telecom</strong>, du <strong>CERMES-NIGER</strong> et de l'<strong>ESCEP-Niger</strong>.
+        </div>
+      </div>
+      <a href="#contact" class="btn btn-secondary" style="padding:8px 16px;font-size:0.8rem;white-space:nowrap;">
+        Demander les références →
+      </a>
+    </div>  -->
   </div>
 </section>
 
@@ -967,7 +1196,9 @@
 
       <div class="service-card reveal">
         <div class="service-num">01</div>
-        <div class="service-icon" aria-hidden="true">🏗️</div>
+        <div class="service-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+        </div>
         <div class="service-title">Architecture Microservices & APIs</div>
         <p class="service-desc">Conception de systèmes distribués résilients, découplage de domaines métier (DDD, architecture hexagonale), API Gateway sécurisées, communication asynchrone par événements (Kafka / Outbox) et APIs RESTful documentées.</p>
         <div class="service-tags">
@@ -979,7 +1210,9 @@
 
       <div class="service-card reveal delay-1">
         <div class="service-num">02</div>
-        <div class="service-icon" aria-hidden="true">🚀</div>
+        <div class="service-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M13 6h3a2 2 0 0 1 2 2v7"/><line x1="6" y1="9" x2="6" y2="21"/></svg>
+        </div>
         <div class="service-title">Industrialisation DevOps & CI/CD</div>
         <p class="service-desc">Automatisation complète des chaînes de livraison continue : pipelines GitLab CI/CD multi-étapes, détection de fuite de secrets (Gitleaks), validation de manifestes K8s (Kubeconform), conteneurisation Docker et déploiements zéro-downtime.</p>
         <div class="service-tags">
@@ -991,7 +1224,9 @@
 
       <div class="service-card reveal delay-2">
         <div class="service-num">03</div>
-        <div class="service-icon" aria-hidden="true">🧠</div>
+        <div class="service-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>
+        </div>
         <div class="service-title">Intelligence Artificielle & Vision</div>
         <p class="service-desc">Intégration opérationnelle de modèles d'IA dans les flux métiers : microservices d'inférence OCR (PaddleOCR PP-OCRv5), reconnaissance faciale vectorielle (InsightFace), détection de vivacité anti-fraude et modèles Vision-Langage.</p>
         <div class="service-tags">
@@ -1003,7 +1238,9 @@
 
       <div class="service-card reveal">
         <div class="service-num">04</div>
-        <div class="service-icon" aria-hidden="true">🛡️</div>
+        <div class="service-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 11 12 14 22 4"/></svg>
+        </div>
         <div class="service-title">Sécurité, Identité & Zero-Trust</div>
         <p class="service-desc">Centralisation de l'authentification et des autorisations avec Keycloak (OpenID Connect / OAuth2), validation décentralisée des jetons JWT (RS256 via JWKS), contrôle d'accès RBAC et gestion sécurisée des secrets via HashiCorp Vault.</p>
         <div class="service-tags">
@@ -1015,7 +1252,9 @@
 
       <div class="service-card reveal delay-1">
         <div class="service-num">05</div>
-        <div class="service-icon" aria-hidden="true">🗄️</div>
+        <div class="service-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+        </div>
         <div class="service-title">Bases de Données & Transactions ACID</div>
         <p class="service-desc">Modélisation relationnelle rigoureuse, intégrité référentielle financière, transactions ACID, migrations de schémas automatisées et versionnées (Flyway), indexation avancée et stratégies de cache distribué Redis.</p>
         <div class="service-tags">
@@ -1027,7 +1266,9 @@
 
       <div class="service-card reveal delay-2">
         <div class="service-num">06</div>
-        <div class="service-icon" aria-hidden="true">📋</div>
+        <div class="service-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="m9 15 2 2 4-4"/></svg>
+        </div>
         <div class="service-title">Qualité Logicielle & Maintien en Prod</div>
         <p class="service-desc">Couverture de tests unitaires et d'intégration (Jest, JUnit/Mockito), documentation technique OpenAPI/Swagger, revues de code systématiques, supervision applicative des logs, troubleshooting et support opérationnel N1/N2.</p>
         <div class="service-tags">
@@ -1037,6 +1278,41 @@
         </div>
       </div>
 
+    </div>
+
+    <!-- GARANTIES D'INGÉNIERIE & DE CONFORMITÉ -->
+    <div class="guarantees-grid reveal">
+      <div class="guarantee-card">
+        <div class="guarantee-title">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          Transactions ACID
+        </div>
+        <p class="guarantee-desc">Isolation transactionnelle stricte, intégrité du grand livre et tolérance aux défaillances réseau.</p>
+      </div>
+
+      <div class="guarantee-card">
+        <div class="guarantee-title">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          Zéro Downtime (ZDD)
+        </div>
+        <p class="guarantee-desc">Déploiements atomiques sans interruption de service avec sondes Kubernetes et rollback automatisé.</p>
+      </div>
+
+      <div class="guarantee-card">
+        <div class="guarantee-title">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          Audit DevSecOps
+        </div>
+        <p class="guarantee-desc">Contrôle statique Gitleaks, validation de manifestes Kubeconform et images Docker immuables.</p>
+      </div>
+
+      <div class="guarantee-card">
+        <div class="guarantee-title">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          Conformité Réglementaire
+        </div>
+        <p class="guarantee-desc">Alignement avec les directives BCEAO, protection des données personnelles et traçabilité auditable.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -1052,7 +1328,9 @@
     <div class="community-grid">
 
       <div class="community-card reveal">
-        <div class="community-icon" aria-hidden="true">💻</div>
+        <div class="community-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        </div>
         <div>
           <div class="community-title">Pratique du Code Ouvert</div>
           <p class="community-desc">Partage de composants modulaires, prototypage d'architectures distribuées et exploration active des bonnes pratiques du génie logiciel moderne.</p>
@@ -1060,7 +1338,9 @@
       </div>
 
       <div class="community-card reveal delay-1">
-        <div class="community-icon" aria-hidden="true">📝</div>
+        <div class="community-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+        </div>
         <div>
           <div class="community-title">Veille Technologique Active</div>
           <p class="community-desc">Suivi continu des évolutions logicielles : Spring Boot 3 & Java 21, écosystème Cloud-Native (Kubernetes, Kustomize), IA générative & RAG, et standards de sécurité OWASP.</p>
@@ -1068,7 +1348,9 @@
       </div>
 
       <div class="community-card reveal delay-2">
-        <div class="community-icon" aria-hidden="true">🤝</div>
+        <div class="community-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
         <div>
           <div class="community-title">Partage & Mentorat</div>
           <p class="community-desc">Accompagnement de jeunes développeurs sur les architectures propres, les revues de code, Git et la rigueur du génie logiciel.</p>
@@ -1076,7 +1358,9 @@
       </div>
 
       <div class="community-card reveal delay-3">
-        <div class="community-icon" aria-hidden="true">🌍</div>
+        <div class="community-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+        </div>
         <div>
           <div class="community-title">Impact Régional & Institutionnel</div>
           <p class="community-desc">Conception de solutions adaptées aux contraintes d'infrastructure du continent africain : haute résilience, traçabilité transactionnelle et souveraineté des données.</p>
@@ -1120,7 +1404,8 @@
           Envoyer un email
         </a>
         <a href="https://wa.me/22789270783" class="btn btn-secondary" target="_blank" rel="noopener noreferrer" aria-label="Contacter sur WhatsApp">
-          💬 WhatsApp
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp
         </a>
         <a href="CV_SOUMAILOU_SOUMANA.pdf" class="btn btn-ghost" download>
           ↓ Télécharger CV
@@ -1137,35 +1422,51 @@
 
         <div class="contact-info-block">
           <div class="contact-info-row">
-            <div class="contact-info-icon" aria-hidden="true">📍</div>
+            <div class="contact-info-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
             <div>
               <div class="contact-info-label">Localisation</div>
               <div class="contact-info-val">Niamey, Niger 🇳🇪</div>
             </div>
           </div>
           <div class="contact-info-row">
-            <div class="contact-info-icon" aria-hidden="true">✉️</div>
+            <div class="contact-info-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
             <div>
-              <div class="contact-info-label">Email</div>
-              <div class="contact-info-val"><a href="mailto:soumailou.kailou@gmail.com" aria-label="Envoyer un email">soumailou.kailou@gmail.com</a></div>
+              <div class="contact-info-label">Email Professionnel</div>
+              <div class="contact-info-val" style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+                <a href="mailto:soumailou.kailou@gmail.com" aria-label="Envoyer un email">soumailou.kailou@gmail.com</a>
+                <button type="button" class="btn-copy-email" id="copyEmailBtn" aria-label="Copier l'adresse email">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+                  Copier
+                </button>
+              </div>
             </div>
           </div>
           <div class="contact-info-row">
-            <div class="contact-info-icon" aria-hidden="true">📱</div>
+            <div class="contact-info-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+            </div>
             <div>
               <div class="contact-info-label">Téléphone / WhatsApp</div>
               <div class="contact-info-val"><a href="tel:+22789270783" aria-label="Appeler">+227 89 27 07 83</a> / <a href="tel:+22781673379" aria-label="Appeler">+227 81 67 33 79</a></div>
             </div>
           </div>
           <div class="contact-info-row">
-            <div class="contact-info-icon" aria-hidden="true">✅</div>
+            <div class="contact-info-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="var(--green)"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
             <div>
               <div class="contact-info-label">Disponibilité</div>
               <div class="contact-info-val" style="color:var(--green);font-weight:500;">Disponible pour opportunités (CDI & Projets) ✓</div>
             </div>
           </div>
           <div class="contact-info-row">
-            <div class="contact-info-icon" aria-hidden="true">⏱️</div>
+            <div class="contact-info-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
             <div>
               <div class="contact-info-label">Délai de réactivité</div>
               <div class="contact-info-val">Sous 24 heures</div>
@@ -1196,6 +1497,9 @@
       <div class="reveal-right">
         <h3 class="sec-eyebrow" style="margin-bottom:28px;">Transmettre un message</h3>
         <form class="contact-form" id="contactForm" novalidate>
+          <!-- Honeypot anti-spam (invisible pour l'humain) -->
+          <input type="text" id="_gotcha" name="_gotcha" style="display:none !important;" tabindex="-1" autocomplete="off" aria-hidden="true">
+
           <div class="form-group">
             <label class="form-label" for="from_name">Votre nom</label>
             <input type="text" id="from_name" name="from_name" class="form-input" placeholder="Votre nom complet ou institution" required autocomplete="name">
@@ -1230,6 +1534,7 @@
   <div class="footer-right">
     <ul class="footer-links">
       <li><a href="#about">À propos</a></li>
+      <li><a href="#philosophy">Philosophie</a></li>
       <li><a href="#expertise">Expertise</a></li>
       <li><a href="#projects">Projets</a></li>
       <li><a href="#education">Formation</a></li>

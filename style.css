@@ -1912,3 +1912,407 @@ footer {
   .expertise-grid { gap: 14px; }
   .services-grid { gap: 14px; }
 }
+
+/* ══════════════════════════════════════════
+   ACCESSIBILITY & SKIP LINK
+   ══════════════════════════════════════════ */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 16px;
+  background: var(--indigo);
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  z-index: 9999;
+  transition: top 0.2s ease;
+  text-decoration: none;
+}
+.skip-link:focus {
+  top: 16px;
+  outline: 2px solid var(--cyan);
+}
+
+/* ══════════════════════════════════════════
+   SVG ICONS UNIFORM STYLING
+   ══════════════════════════════════════════ */
+.exp-icon svg,
+.proj-icon svg,
+.edu-icon svg,
+.service-icon svg,
+.community-icon svg,
+.contact-info-icon svg,
+.philo-icon svg,
+.guarantee-icon svg {
+  width: 22px;
+  height: 22px;
+  stroke-width: 2;
+  flex-shrink: 0;
+}
+
+.service-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(99, 102, 241, 0.1);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4px;
+}
+
+/* ══════════════════════════════════════════
+   CV METADATA BADGE
+   ══════════════════════════════════════════ */
+.cv-badge-info {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+  letter-spacing: 0.5px;
+}
+
+/* ══════════════════════════════════════════
+   PHILOSOPHIE D'INGÉNIEUR
+   ══════════════════════════════════════════ */
+#philosophy {
+  border-top: 1px solid var(--border-subtle);
+  background: linear-gradient(180deg, var(--bg-base) 0%, var(--bg-surface) 100%);
+}
+
+.philo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 56px;
+}
+
+.philo-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 32px 28px;
+  position: relative;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.philo-card:hover {
+  border-color: var(--border-bright);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-glow);
+}
+
+.philo-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.philo-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(99, 102, 241, 0.12);
+  border: 1px solid var(--border);
+  color: var(--indigo-light);
+}
+
+.philo-num {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.philo-title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.philo-desc {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+}
+
+.philo-quote {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--cyan);
+  background: rgba(34, 211, 238, 0.06);
+  border-left: 2px solid var(--cyan);
+  padding: 8px 12px;
+  border-radius: 0 6px 6px 0;
+  margin-top: auto;
+}
+
+/* ══════════════════════════════════════════
+   ARCHITECTURE BLUEPRINT IN PROJECT CARDS
+   ══════════════════════════════════════════ */
+.arch-blueprint {
+  margin-top: 24px;
+  background: rgba(5, 9, 17, 0.85);
+  border: 1px solid rgba(99, 102, 241, 0.25);
+  border-radius: 12px;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.arch-blueprint-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border-subtle);
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.arch-blueprint-title {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 1px;
+  color: var(--cyan);
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.arch-blueprint-badge {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: rgba(16, 185, 129, 0.15);
+  color: var(--green-light);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.arch-layers {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.arch-layer {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 14px;
+  align-items: center;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: rgba(13, 27, 53, 0.5);
+  border: 1px solid var(--border-subtle);
+  font-size: 0.78rem;
+}
+
+.arch-layer-name {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.arch-layer-nodes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.arch-node {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--text-primary);
+}
+
+.arch-node.edge { border-color: rgba(34, 211, 238, 0.3); color: var(--cyan); }
+.arch-node.sec  { border-color: rgba(245, 158, 11, 0.3); color: var(--amber); }
+.arch-node.core { border-color: rgba(99, 102, 241, 0.4); color: var(--indigo-light); font-weight: 600; }
+.arch-node.ai   { border-color: rgba(167, 139, 250, 0.4); color: #c084fc; }
+.arch-node.data { border-color: rgba(16, 185, 129, 0.3); color: var(--green-light); }
+
+/* ══════════════════════════════════════════
+   KYC / AI CONSOLE TERMINAL
+   ══════════════════════════════════════════ */
+.kyc-terminal {
+  margin-top: 20px;
+  background: #020611;
+  border: 1px solid rgba(167, 139, 250, 0.3);
+  border-radius: 10px;
+  overflow: hidden;
+  font-family: var(--font-mono);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.kyc-terminal-topbar {
+  background: #090f1e;
+  padding: 8px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.kyc-terminal-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.kyc-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+}
+.kyc-dot.red    { background: #ef4444; }
+.kyc-dot.yellow { background: #f59e0b; }
+.kyc-dot.green  { background: #10b981; }
+
+.kyc-terminal-title {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+}
+
+.kyc-terminal-badge {
+  font-size: 0.62rem;
+  color: #c084fc;
+  background: rgba(167, 139, 250, 0.12);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.kyc-terminal-body {
+  padding: 14px 16px;
+  font-size: 0.72rem;
+  line-height: 1.6;
+  color: #94a3b8;
+  max-height: 240px;
+  overflow-y: auto;
+}
+
+.kyc-terminal-body .json-key { color: var(--cyan); }
+.kyc-terminal-body .json-str { color: #a5b4fc; }
+.kyc-terminal-body .json-num { color: #f59e0b; }
+.kyc-terminal-body .json-bool { color: #10b981; }
+
+/* ══════════════════════════════════════════
+   GUARANTEES & REFERENCES
+   ══════════════════════════════════════ */
+.guarantees-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 36px;
+}
+
+.guarantee-card {
+  background: rgba(13, 27, 53, 0.6);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.guarantee-title {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-primary);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.guarantee-desc {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.ref-banner {
+  margin-top: 48px;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.08) 0%, rgba(34, 211, 238, 0.05) 100%);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.ref-banner-content {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.ref-banner-text {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.ref-banner-text strong {
+  color: var(--text-primary);
+}
+
+.btn-copy-email {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  background: rgba(99, 102, 241, 0.1);
+  border: 1px solid var(--border);
+  color: var(--indigo-light);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-copy-email:hover {
+  background: rgba(99, 102, 241, 0.2);
+  border-color: var(--border-bright);
+  color: #fff;
+}
+
+@media (max-width: 900px) {
+  .philo-grid { grid-template-columns: 1fr; }
+  .guarantees-grid { grid-template-columns: repeat(2, 1fr); }
+  .arch-layer { grid-template-columns: 1fr; gap: 8px; }
+}
+
+@media (max-width: 480px) {
+  .guarantees-grid { grid-template-columns: 1fr; }
+}
