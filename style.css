@@ -668,6 +668,10 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   line-height: 1.9;
   margin-bottom: 20px;
   font-weight: 300;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+  -webkit-hyphens: auto;
 }
 
 .about-text p strong { color: var(--text-primary); font-weight: 600; }
@@ -761,6 +765,10 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   font-size: 0.82rem;
   color: var(--text-secondary);
   line-height: 1.65;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+  -webkit-hyphens: auto;
 }
 
 /* ══════════════════════════════════════════
@@ -851,6 +859,10 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   color: var(--text-secondary);
   line-height: 1.6;
   margin-bottom: 16px;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+  -webkit-hyphens: auto;
 }
 
 .exp-tags { display: flex; flex-wrap: wrap; gap: 6px; }
@@ -1102,6 +1114,10 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   line-height: 1.7;
   flex: 1;
   margin-bottom: 20px;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+  -webkit-hyphens: auto;
 }
 
 .proj-case {
@@ -1135,6 +1151,10 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   font-size: 0.8rem;
   color: var(--text-secondary);
   line-height: 1.5;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+  -webkit-hyphens: auto;
 }
 
 .proj-footer {
@@ -1267,6 +1287,10 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   padding-left: 18px;
   position: relative;
   line-height: 1.6;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+  -webkit-hyphens: auto;
 }
 
 .exp-list li::before {
@@ -1342,6 +1366,10 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   font-size: 0.8rem;
   color: var(--text-secondary);
   line-height: 1.6;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+  -webkit-hyphens: auto;
 }
 
 /* ══════════════════════════════════════════
@@ -1397,6 +1425,10 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   color: var(--text-secondary);
   line-height: 1.65;
   flex: 1;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+  -webkit-hyphens: auto;
 }
 
 .service-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
@@ -1454,6 +1486,10 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   font-size: 0.82rem;
   color: var(--text-secondary);
   line-height: 1.6;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+  -webkit-hyphens: auto;
 }
 
 /* GitHub contribution widget */
