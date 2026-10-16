@@ -1,34 +1,30 @@
-/* ═══════════════════════════════════════════════════════
-   SOUMAILOU SOUMANA — app.js
-   Animations, interactions, EmailJS contact
-   ═══════════════════════════════════════════════════════ */
+/**
+ * Soumailou Soumana — Ingénieur Génie Logiciel
+ * Scripts d'interactions, validation de formulaire et visualiseur de document
+ */
 
 'use strict';
 
-/* ══ EMAILJS INIT ══ */
+// Configuration du service d'envoi EmailJS
 (function () {
   if (typeof emailjs !== 'undefined') {
     emailjs.init('uTxm0uxKMlDSPKk3j');
   }
 })();
 
-/* ══ DOM READY ══ */
+// Initialisation au chargement de la page
 document.addEventListener('DOMContentLoaded', () => {
   initNav();
   initScrollReveal();
-  initCounters();
-  initSkillBars();
-  initTypewriter();
   initProjectFilter();
   initContactForm();
   initCopyEmail();
   initMobileMenu();
   initActiveNavLinks();
-  initParticles();
   initCvModal();
 });
 
-/* ══ TOAST ══ */
+// Notifications toast
 function showToast(message, type = 'success') {
   const toast = document.getElementById('toast');
   if (!toast) return;
@@ -38,7 +34,7 @@ function showToast(message, type = 'success') {
   setTimeout(() => toast.classList.remove('show'), 5000);
 }
 
-/* ══ NAVIGATION ══ */
+// Barre de navigation
 function initNav() {
   const navbar = document.getElementById('navbar');
   if (!navbar) return;
@@ -48,7 +44,7 @@ function initNav() {
   }, { passive: true });
 }
 
-/* ══ MOBILE MENU ══ */
+// Menu mobile
 function initMobileMenu() {
   const ham = document.getElementById('hamburger');
   const mob = document.getElementById('mobileMenu');
@@ -69,14 +65,14 @@ function initMobileMenu() {
     link.addEventListener('click', () => toggleMenu(false));
   });
 
-  // Close on outside click
+  // Fermeture au clic extérieur
   document.addEventListener('click', (e) => {
     if (!mob.contains(e.target) && !ham.contains(e.target) && mob.classList.contains('open')) {
       toggleMenu(false);
     }
   });
 
-  // Close on Escape key
+  // Fermeture avec la touche Échap
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && mob.classList.contains('open')) {
       toggleMenu(false);
@@ -85,7 +81,7 @@ function initMobileMenu() {
   });
 }
 
-/* ══ ACTIVE NAV LINKS ══ */
+// Détection de la section active dans le menu
 function initActiveNavLinks() {
   const sections = document.querySelectorAll('section[id], div[id]');
   const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
@@ -106,7 +102,7 @@ function initActiveNavLinks() {
   sections.forEach(section => observer.observe(section));
 }
 
-/* ══ SCROLL REVEAL ══ */
+// Révélation progressive des blocs au scroll
 function initScrollReveal() {
   const elements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
 
@@ -122,110 +118,7 @@ function initScrollReveal() {
   elements.forEach(el => observer.observe(el));
 }
 
-/* ══ ANIMATED COUNTERS ══ */
-function initCounters() {
-  const counters = document.querySelectorAll('[data-count]');
-  if (!counters.length) return;
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        animateCounter(entry.target);
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.5 });
-
-  counters.forEach(counter => observer.observe(counter));
-}
-
-function animateCounter(el) {
-  const target = parseInt(el.dataset.count, 10);
-  const suffix = el.dataset.suffix || '';
-  const duration = 1800;
-  const start = performance.now();
-
-  function update(now) {
-    const elapsed = now - start;
-    const progress = Math.min(elapsed / duration, 1);
-    const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
-    const current = Math.floor(eased * target);
-    el.textContent = current + suffix;
-
-    if (progress < 1) requestAnimationFrame(update);
-    else el.textContent = target + suffix;
-  }
-
-  requestAnimationFrame(update);
-}
-
-/* ══ SKILL BARS ══ */
-function initSkillBars() {
-  const bars = document.querySelectorAll('.bar-fill[data-w]');
-  if (!bars.length) return;
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const bar = entry.target;
-        setTimeout(() => {
-          bar.style.transform = `scaleX(${bar.dataset.w})`;
-        }, 100);
-        observer.unobserve(bar);
-      }
-    });
-  }, { threshold: 0.3 });
-
-  bars.forEach(bar => observer.observe(bar));
-}
-
-/* ══ TYPEWRITER EFFECT ══ */
-function initTypewriter() {
-  const el = document.getElementById('typewriter');
-  if (!el) return;
-
-  const phrases = [
-    'Ingénieur Génie Logiciel',
-    'Développement d’Applications & APIs',
-    'Ingénieur DevOps & CI/CD',
-    'Intégration d’Intelligence Artificielle',
-    'Architectures Microservices & Cloud'
-  ];
-
-  let phraseIndex = 0;
-  let charIndex = 0;
-  let isDeleting = false;
-  let isPaused = false;
-
-  function type() {
-    const currentPhrase = phrases[phraseIndex];
-
-    if (isDeleting) {
-      charIndex--;
-      el.textContent = currentPhrase.substring(0, charIndex);
-    } else {
-      charIndex++;
-      el.textContent = currentPhrase.substring(0, charIndex);
-    }
-
-    let delay = isDeleting ? 45 : 85;
-
-    if (!isDeleting && charIndex === currentPhrase.length) {
-      delay = 2300;
-      isDeleting = true;
-    } else if (isDeleting && charIndex === 0) {
-      isDeleting = false;
-      phraseIndex = (phraseIndex + 1) % phrases.length;
-      delay = 350;
-    }
-
-    setTimeout(type, delay);
-  }
-
-  type();
-}
-
-/* ══ PROJECT FILTER ══ */
+/* --- Filtre des réalisations --- */
 function initProjectFilter() {
   const filterBtns = document.querySelectorAll('.filter-btn');
   const projectCards = document.querySelectorAll('.project-card[data-category]');
@@ -264,7 +157,7 @@ function initProjectFilter() {
   });
 }
 
-/* ══ CONTACT FORM (EmailJS + Strict Validation) ══ */
+// Formulaire de contact (validation stricte et envoi EmailJS)
 function initContactForm() {
   const form = document.getElementById('contactForm');
   if (!form) return;
@@ -287,7 +180,7 @@ function initContactForm() {
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    // Honeypot check for bots
+    // Filtre anti-spam honeypot
     const gotcha = document.getElementById('_gotcha');
     if (gotcha && gotcha.value.trim() !== '') {
       showToast('Message transmis ✓', 'success');
@@ -295,7 +188,7 @@ function initContactForm() {
       return;
     }
 
-    // ── VALIDATION STRICTE CÔTÉ CLIENT ──
+    // Validation des données saisies
     const errors = [];
     fields.forEach(f => f.classList.remove('input-error'));
 
@@ -325,7 +218,7 @@ function initContactForm() {
       errors.push({ field: messageInput, message: 'Votre message est trop court (10 caractères minimum).' });
     }
 
-    // S'il y a des erreurs, on bloque l'envoi immédiatement
+    // Blocage si erreurs détectées
     if (errors.length > 0) {
       errors.forEach(err => {
         if (err.field) err.field.classList.add('input-error');
@@ -334,10 +227,10 @@ function initContactForm() {
         errors[0].field.focus();
       }
       showToast(errors[0].message, 'error');
-      return; // Bloque toute soumission et tout EmailJS
+      return;
     }
 
-    // ── ENVOI DES DONNÉES VALIDÉES ──
+    // Traitement de l'envoi
     btn.textContent = 'Envoi en cours...';
     btn.disabled = true;
 
@@ -382,7 +275,7 @@ function initContactForm() {
   });
 }
 
-/* ══ COPY EMAIL HELPER ══ */
+// Copie rapide de l'adresse email
 function initCopyEmail() {
   const copyBtn = document.getElementById('copyEmailBtn');
   if (!copyBtn) return;
@@ -411,84 +304,7 @@ function initCopyEmail() {
   });
 }
 
-/* ══ SUBTLE PARTICLE BACKGROUND ══ */
-function initParticles() {
-  const canvas = document.getElementById('heroCanvas');
-  if (!canvas) return;
-
-  // Respect users who prefer reduced motion
-  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    canvas.style.display = 'none';
-    return;
-  }
-
-  const ctx = canvas.getContext('2d');
-  let particles = [];
-  let animId;
-  let isRunning = true;
-
-  function resize() {
-    canvas.width = canvas.offsetWidth;
-    canvas.height = canvas.offsetHeight;
-  }
-
-  class Particle {
-    constructor() { this.reset(); }
-    reset() {
-      this.x = Math.random() * canvas.width;
-      this.y = Math.random() * canvas.height;
-      this.size = Math.random() * 1.5 + 0.5;
-      this.opacity = Math.random() * 0.4 + 0.1;
-      this.vx = (Math.random() - 0.5) * 0.3;
-      this.vy = (Math.random() - 0.5) * 0.3;
-      this.life = 0;
-      this.maxLife = Math.random() * 300 + 150;
-    }
-    update() {
-      this.x += this.vx;
-      this.y += this.vy;
-      this.life++;
-      if (this.life > this.maxLife) this.reset();
-    }
-    draw() {
-      const alpha = Math.sin((this.life / this.maxLife) * Math.PI) * this.opacity;
-      ctx.beginPath();
-      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(99, 102, 241, ${alpha})`;
-      ctx.fill();
-    }
-  }
-
-  function init() {
-    resize();
-    particles = Array.from({ length: 45 }, () => new Particle());
-  }
-
-  function animate() {
-    if (!isRunning) return;
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    particles.forEach(p => { p.update(); p.draw(); });
-    animId = requestAnimationFrame(animate);
-  }
-
-  document.addEventListener('visibilitychange', () => {
-    if (document.hidden) {
-      isRunning = false;
-      cancelAnimationFrame(animId);
-    } else {
-      isRunning = true;
-      animate();
-    }
-  });
-
-  const resizeObserver = new ResizeObserver(() => { resize(); });
-  resizeObserver.observe(canvas);
-
-  init();
-  animate();
-}
-
-/* ══ SMOOTH SCROLL FOR ANCHOR LINKS ══ */
+/* --- Défilement fluide pour ancres --- */
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', (e) => {
     const href = anchor.getAttribute('href');
@@ -503,7 +319,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-/* ══ IN-PAGE CV VIEWER MODAL ══ */
+// Visualiseur de CV intégré à la page
 function initCvModal() {
   const modal = document.getElementById('cvModal');
   const iframe = document.getElementById('cvModalIframe');

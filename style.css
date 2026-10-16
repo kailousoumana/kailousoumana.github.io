@@ -674,7 +674,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 /* ══════════════════════════════════════════
    ABOUT SECTION
    ══════════════════════════════════════════ */
-#about { background: var(--bg-surface); border-top: 1px solid var(--border-subtle); }
+#about { background: var(--bg-surface); }
 
 .about-grid {
   display: grid;
@@ -796,7 +796,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 /* ══════════════════════════════════════════
    EXPERTISE TECHNIQUE
    ══════════════════════════════════════════ */
-#expertise { border-top: 1px solid var(--border-subtle); }
+#expertise { position: relative; }
 
 .expertise-grid {
   display: grid;
@@ -815,31 +815,12 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   overflow: hidden;
 }
 
-.expertise-card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 3px;
-  border-radius: 16px 16px 0 0;
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-.expertise-card.backend::before { background: linear-gradient(90deg, var(--indigo), var(--indigo-light)); }
-.expertise-card.frontend::before { background: linear-gradient(90deg, var(--cyan), #a78bfa); }
-.expertise-card.database::before { background: linear-gradient(90deg, var(--green), var(--cyan)); }
-.expertise-card.devops::before { background: linear-gradient(90deg, var(--amber), #fb923c); }
-.expertise-card.archi::before { background: linear-gradient(90deg, #a78bfa, var(--indigo)); }
-.expertise-card.domain::before { background: linear-gradient(90deg, var(--green), var(--amber)); }
-
 .expertise-card:hover {
   border-color: var(--border-bright);
   background: var(--bg-card-hover);
   transform: translateY(-4px);
   box-shadow: var(--shadow-glow);
 }
-
-.expertise-card:hover::before { opacity: 1; }
 
 .exp-icon {
   width: 44px;
@@ -891,9 +872,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 /* Tech Stack Bars */
 .stack-section {
-  margin-top: 80px;
-  padding-top: 64px;
-  border-top: 1px solid var(--border-subtle);
+  margin-top: 60px;
+  padding-top: 20px;
 }
 
 .stack-grid {
@@ -914,58 +894,75 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   border-bottom: 1px solid var(--border-subtle);
 }
 
-.bar-item { margin-bottom: 20px; }
+/* --- Matrice de compétences et d'application opérationnelle --- */
+.skill-matrix-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 13px 16px;
+  margin-bottom: 11px;
+  transition: var(--transition);
+}
 
-.bar-row {
+.skill-matrix-item:hover {
+  border-color: var(--border-bright);
+  background: var(--bg-card-hover);
+  transform: translateX(3px);
+}
+
+.skill-matrix-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 8px;
+  gap: 10px;
+  margin-bottom: 5px;
 }
 
-.bar-name {
-  font-size: 0.85rem;
-  color: var(--text-secondary);
-  font-weight: 400;
+.skill-matrix-name {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-primary);
 }
 
-.bar-pct {
+.skill-matrix-badge {
   font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 6px;
+  white-space: nowrap;
+  letter-spacing: 0.3px;
+}
+
+.skill-matrix-badge.prod {
+  background: rgba(16, 185, 129, 0.12);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.28);
+}
+
+.skill-matrix-badge.deploy {
+  background: rgba(99, 102, 241, 0.12);
   color: var(--indigo-light);
+  border: 1px solid rgba(99, 102, 241, 0.28);
 }
 
-.bar-track {
-  height: 4px;
-  background: rgba(99,102,241,0.1);
-  border-radius: 4px;
-  overflow: hidden;
+.skill-matrix-badge.notion {
+  background: rgba(245, 158, 11, 0.12);
+  color: #fbbf24;
+  border: 1px solid rgba(245, 158, 11, 0.28);
 }
 
-.bar-fill {
-  height: 100%;
-  border-radius: 4px;
-  background: linear-gradient(90deg, var(--indigo), var(--indigo-light));
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 1.2s cubic-bezier(0.23, 1, 0.32, 1);
-}
-
-.bar-sub {
-  font-size: 0.7rem;
+.skill-matrix-desc {
+  font-size: 0.77rem;
   color: var(--text-muted);
-  margin-top: 2px;
+  line-height: 1.45;
   display: block;
 }
-
-.bar-fill.cyan { background: linear-gradient(90deg, var(--cyan), #a78bfa); }
-.bar-fill.green { background: linear-gradient(90deg, var(--green), var(--cyan)); }
-.bar-fill.amber { background: linear-gradient(90deg, var(--amber), #fb923c); }
 
 /* ══════════════════════════════════════════
    PROJECTS SECTION
    ══════════════════════════════════════════ */
-#projects { background: var(--bg-surface); border-top: 1px solid var(--border-subtle); }
+#projects { background: var(--bg-surface); }
 
 .projects-filter {
   display: flex;
@@ -1184,7 +1181,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   justify-content: space-between;
   align-items: center;
   padding-top: 16px;
-  border-top: 1px solid var(--border-subtle);
   gap: 12px;
   flex-wrap: wrap;
 }
@@ -1213,7 +1209,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 /* ══════════════════════════════════════════
    EXPERIENCE SECTION
    ══════════════════════════════════════════ */
-#experience { border-top: 1px solid var(--border-subtle); }
+#experience { position: relative; }
 
 .exp-timeline {
   position: relative;
@@ -1328,7 +1324,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 /* ══════════════════════════════════════════
    EDUCATION / CERTIFICATIONS
    ══════════════════════════════════════════ */
-#education { background: var(--bg-surface); border-top: 1px solid var(--border-subtle); }
+#education { background: var(--bg-surface); }
 
 .edu-grid {
   display: grid;
@@ -1397,7 +1393,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 /* ══════════════════════════════════════════
    SERVICES
    ══════════════════════════════════════════ */
-#services { border-top: 1px solid var(--border-subtle); }
+#services { position: relative; }
 
 .services-grid {
   display: grid;
@@ -1458,7 +1454,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 /* ══════════════════════════════════════════
    OPEN SOURCE / COMMUNITY
    ══════════════════════════════════════════ */
-#community { background: var(--bg-surface); border-top: 1px solid var(--border-subtle); }
+#community { background: var(--bg-surface); }
 
 .community-grid {
   display: grid;
@@ -1560,7 +1556,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 /* ══════════════════════════════════════════
    TESTIMONIALS
    ══════════════════════════════════════════ */
-#testimonials { border-top: 1px solid var(--border-subtle); }
+#testimonials { position: relative; }
 
 .testimonials-grid {
   display: grid;
@@ -1604,7 +1600,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   align-items: center;
   gap: 12px;
   padding-top: 16px;
-  border-top: 1px solid var(--border-subtle);
 }
 
 .testimonial-avatar {
@@ -1633,7 +1628,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 /* ══════════════════════════════════════════
    CONTACT SECTION
    ══════════════════════════════════════════ */
-#contact { background: var(--bg-surface); border-top: 1px solid var(--border-subtle); }
+#contact { background: var(--bg-surface); }
 
 .contact-cta-box {
   text-align: center;
@@ -1853,7 +1848,6 @@ footer {
   align-items: center;
   flex-wrap: wrap;
   gap: 16px;
-  border-top: 1px solid var(--border-subtle);
   background: var(--bg-base);
 }
 
@@ -2011,11 +2005,8 @@ footer {
   letter-spacing: 0.5px;
 }
 
-/* ══════════════════════════════════════════
-   PHILOSOPHIE D'INGÉNIEUR
-   ══════════════════════════════════════════ */
+/* Philosophie d'ingénieur */
 #philosophy {
-  border-top: 1px solid var(--border-subtle);
   background: linear-gradient(180deg, var(--bg-base) 0%, var(--bg-surface) 100%);
 }
 
@@ -2090,15 +2081,12 @@ footer {
   font-size: 0.75rem;
   color: var(--cyan);
   background: rgba(34, 211, 238, 0.06);
-  border-left: 2px solid var(--cyan);
-  padding: 8px 12px;
-  border-radius: 0 6px 6px 0;
+  padding: 10px 14px;
+  border-radius: 8px;
   margin-top: auto;
 }
 
-/* ══════════════════════════════════════════
-   ARCHITECTURE BLUEPRINT IN PROJECT CARDS
-   ══════════════════════════════════════════ */
+/* Architecture blueprint in project cards */
 .arch-blueprint {
   margin-top: 24px;
   background: rgba(5, 9, 17, 0.85);
@@ -2585,7 +2573,6 @@ footer {
   #navbar,
   .mobile-menu,
   .hamburger,
-  #heroCanvas,
   .hero-bg,
   .hero-photo-glow,
   .toast,
