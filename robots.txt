@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /Asecna/
 
 Sitemap: https://kailousoumana.github.io/sitemap.xml

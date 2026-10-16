@@ -52,26 +52,33 @@ function initMobileMenu() {
   const mob = document.getElementById('mobileMenu');
   if (!ham || !mob) return;
 
-  ham.addEventListener('click', () => {
-    ham.classList.toggle('open');
-    mob.classList.toggle('open');
-    document.body.style.overflow = mob.classList.contains('open') ? 'hidden' : '';
-  });
+  function toggleMenu(open) {
+    const isOpen = open !== undefined ? open : !mob.classList.contains('open');
+    ham.classList.toggle('open', isOpen);
+    mob.classList.toggle('open', isOpen);
+    ham.setAttribute('aria-expanded', isOpen.toString());
+    mob.setAttribute('aria-hidden', (!isOpen).toString());
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  }
 
-  document.querySelectorAll('.mob-link').forEach(link => {
-    link.addEventListener('click', () => {
-      ham.classList.remove('open');
-      mob.classList.remove('open');
-      document.body.style.overflow = '';
-    });
+  ham.addEventListener('click', () => toggleMenu());
+
+  document.querySelectorAll('.mob-link, .mob-cta').forEach(link => {
+    link.addEventListener('click', () => toggleMenu(false));
   });
 
   // Close on outside click
   document.addEventListener('click', (e) => {
-    if (!mob.contains(e.target) && !ham.contains(e.target)) {
-      ham.classList.remove('open');
-      mob.classList.remove('open');
-      document.body.style.overflow = '';
+    if (!mob.contains(e.target) && !ham.contains(e.target) && mob.classList.contains('open')) {
+      toggleMenu(false);
+    }
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && mob.classList.contains('open')) {
+      toggleMenu(false);
+      ham.focus();
     }
   });
 }
@@ -176,11 +183,11 @@ function initTypewriter() {
   if (!el) return;
 
   const phrases = [
-    'Senior Full-Stack Engineer',
-    'Backend Architect',
-    'Spécialiste Fintech',
-    'Expert Microservices',
-    'Tech Lead'
+    'Ingénieur Génie Logiciel',
+    'Développement d’Applications & APIs',
+    'Ingénieur DevOps & CI/CD',
+    'Intégration d’Intelligence Artificielle',
+    'Architectures Microservices & Cloud'
   ];
 
   let phraseIndex = 0;
@@ -199,10 +206,10 @@ function initTypewriter() {
       el.textContent = currentPhrase.substring(0, charIndex);
     }
 
-    let delay = isDeleting ? 50 : 90;
+    let delay = isDeleting ? 45 : 85;
 
     if (!isDeleting && charIndex === currentPhrase.length) {
-      delay = 2200;
+      delay = 2300;
       isDeleting = true;
     } else if (isDeleting && charIndex === 0) {
       isDeleting = false;
@@ -303,9 +310,16 @@ function initParticles() {
   const canvas = document.getElementById('heroCanvas');
   if (!canvas) return;
 
+  // Respect users who prefer reduced motion
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    canvas.style.display = 'none';
+    return;
+  }
+
   const ctx = canvas.getContext('2d');
   let particles = [];
   let animId;
+  let isRunning = true;
 
   function resize() {
     canvas.width = canvas.offsetWidth;
@@ -341,14 +355,25 @@ function initParticles() {
 
   function init() {
     resize();
-    particles = Array.from({ length: 60 }, () => new Particle());
+    particles = Array.from({ length: 45 }, () => new Particle());
   }
 
   function animate() {
+    if (!isRunning) return;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     particles.forEach(p => { p.update(); p.draw(); });
     animId = requestAnimationFrame(animate);
   }
+
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      isRunning = false;
+      cancelAnimationFrame(animId);
+    } else {
+      isRunning = true;
+      animate();
+    }
+  });
 
   const resizeObserver = new ResizeObserver(() => { resize(); });
   resizeObserver.observe(canvas);

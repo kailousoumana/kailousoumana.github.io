@@ -1,0 +1,16 @@
+# Confidential / Private application dossiers and official documents
+Asecna/
+*.docx
+diplome*.pdf
+LM_*.pdf
+
+# Operating System files
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Editor & Temp files
+.vscode/
+.idea/
+*.log
+*.tmp
