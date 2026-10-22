@@ -1,0 +1,82 @@
+---
+import { projects, otherProjects } from '../data/site';
+import SectionHead from './SectionHead.astro';
+import Icon from './Icon.astro';
+---
+
+<section id="projets" class="section-soft">
+  <div class="wrap">
+    <SectionHead
+      index="01 · Réalisations"
+      title="Projets & Architectures"
+      summary="Systèmes financiers, plateformes de paiement et applications métiers développés et déployés."
+    />
+
+    <div class="flex flex-col gap-6">
+      {projects.map((p) => (
+        <article class="card card-hover grid gap-7 p-[30px] max-sm:p-5 lg:grid-cols-[1.45fr_1fr]">
+          <div>
+            <div class="mb-2.5 flex flex-wrap items-center gap-2">
+              <span class="tag tag-brand">{p.category}</span>
+              <span class={`tag ${p.statusTone === 'ok' ? 'tag-ok' : 'tag-warn'}`}>{p.status}</span>
+              {p.link && (
+                <a href={p.link.href} target="_blank" rel="noopener noreferrer" class="ext-link">
+                  {p.link.label}
+                  <Icon name="external" class="h-[13px] w-[13px]" />
+                </a>
+              )}
+            </div>
+            <h3 class="mb-1 text-[1.25rem] font-bold text-ink">{p.title}</h3>
+            <p class="mb-3 text-[0.9rem] text-muted">{p.context} · <strong class="text-body">{p.role}</strong></p>
+            <p class="mb-3.5 text-[0.96rem] text-body">{p.description}</p>
+            {p.bullets && (
+              <ul class="bullets">
+                {p.bullets.map((b) => <li set:html={b} />)}
+              </ul>
+            )}
+          </div>
+
+          <aside class="flex flex-col justify-between rounded-xl border border-line bg-soft p-[22px]" aria-label="Repères techniques">
+            <div class="mb-[18px] grid grid-cols-2 gap-3 border-b border-line pb-4">
+              {p.stats.map((s) => (
+                <div>
+                  <strong class="block text-[1.15rem] font-extrabold text-brand">{s.value}</strong>
+                  <span class="text-[0.78rem] text-muted">{s.label}</span>
+                </div>
+              ))}
+            </div>
+            <p class="mb-2.5 text-[0.75rem] font-bold uppercase tracking-[0.08em] text-muted">Technologies mobilisées</p>
+            <div class="flex flex-wrap gap-[7px]">
+              {p.tech.map((t) => <span class="chip">{t}</span>)}
+            </div>
+          </aside>
+        </article>
+      ))}
+    </div>
+
+    <h3 class="mb-5 mt-12 text-[1.25rem] font-bold text-ink">Autres plateformes en production</h3>
+
+    <div class="grid gap-5 md:grid-cols-2">
+      {otherProjects.map((o) => (
+        <article class="card card-hover flex flex-col p-6">
+          <div class="mb-3 flex items-center justify-between gap-2">
+            <span class="text-[0.76rem] font-bold uppercase tracking-[0.06em] text-muted">{o.domain}</span>
+            <div class="flex flex-wrap justify-end gap-1.5">
+              {o.links.map((l) => (
+                <a href={l.href} target="_blank" rel="noopener noreferrer" class="ext-link">
+                  {l.label}
+                  <Icon name="external" class="h-[13px] w-[13px]" />
+                </a>
+              ))}
+            </div>
+          </div>
+          <h4 class="mb-2 text-[1.08rem] font-bold text-ink">{o.title}</h4>
+          <p class="mb-4 flex-1 text-[0.91rem] text-muted">{o.description}</p>
+          <div class="flex flex-wrap gap-[7px]">
+            {o.tech.map((t) => <span class="chip">{t}</span>)}
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

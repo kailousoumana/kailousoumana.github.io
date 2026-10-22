@@ -1,0 +1,43 @@
+---
+import { skills, extraSkills } from '../data/site';
+import SectionHead from './SectionHead.astro';
+import Icon from './Icon.astro';
+---
+
+<section id="competences" class="section-soft">
+  <div class="wrap">
+    <SectionHead
+      index="03 · Stack technique"
+      title="Compétences & Outils"
+      summary="Technologies pratiquées sur des projets en production et connaissances complémentaires."
+    />
+
+    <div class="grid gap-[18px] sm:grid-cols-2 lg:grid-cols-3">
+      {skills.map((s) => (
+        <div class="card card-hover p-6">
+          <div class="mb-4 flex items-center gap-3">
+            <span class="inline-flex h-[38px] w-[38px] items-center justify-center rounded-[10px] bg-brand-soft text-brand">
+              <Icon name={s.icon} class="h-[19px] w-[19px]" />
+            </span>
+            <h3 class="text-[1.02rem] font-bold text-ink">{s.title}</h3>
+          </div>
+          <div class="flex flex-wrap gap-[7px]">
+            {s.items.map(([label, major]) => <span class={`chip ${major ? 'chip-major' : ''}`}>{label}</span>)}
+          </div>
+        </div>
+      ))}
+
+      <div class="card card-hover p-6 sm:col-span-2 lg:col-span-3">
+        <div class="mb-4 flex items-center gap-3">
+          <span class="inline-flex h-[38px] w-[38px] items-center justify-center rounded-[10px] bg-brand-soft text-brand">
+            <Icon name="layers" class="h-[19px] w-[19px]" />
+          </span>
+          <h3 class="text-[1.02rem] font-bold text-ink">Connaissances complémentaires</h3>
+        </div>
+        <div class="flex flex-wrap gap-[7px]">
+          {extraSkills.map((x) => <span class="chip">{x}</span>)}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,37 @@
+---
+import { experience } from '../data/site';
+import SectionHead from './SectionHead.astro';
+
+const tone: Record<string, string> = { ok: 'tag-ok', brand: 'tag-brand', neutral: 'tag-neutral' };
+---
+
+<section id="experience" class="section">
+  <div class="wrap">
+    <SectionHead
+      index="02 · Parcours"
+      title="Expérience professionnelle"
+      summary="Postes occupés en ingénierie logicielle, exploitation télécoms et systèmes d'information."
+    />
+
+    <div class="flex flex-col gap-5">
+      {experience.map((e) => (
+        <article class="grid items-start gap-2 lg:grid-cols-[230px_1fr] lg:gap-7">
+          <div class="flex flex-col lg:pt-[18px]">
+            <span class="mb-1 text-[0.84rem] font-bold text-brand">{e.period}</span>
+            <strong class="text-[1.08rem] font-extrabold text-ink">{e.company}</strong>
+            <span class="text-[0.85rem] text-muted">{e.place}</span>
+          </div>
+          <div class="card card-hover px-7 py-[26px] max-sm:px-5 max-sm:py-[22px]">
+            <div class="mb-3.5 flex flex-wrap items-center justify-between gap-2.5">
+              <h3 class="text-[1.12rem] font-bold text-ink">{e.title}</h3>
+              <span class={`tag ${tone[e.badge.tone]}`}>{e.badge.label}</span>
+            </div>
+            <ul class="bullets">
+              {e.bullets.map((b) => <li>{b}</li>)}
+            </ul>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

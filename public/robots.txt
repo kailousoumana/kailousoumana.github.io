@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://kailousoumana.github.io/sitemap-index.xml

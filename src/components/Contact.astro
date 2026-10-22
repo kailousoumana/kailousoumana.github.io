@@ -1,0 +1,54 @@
+---
+import { site } from '../data/site';
+import SectionHead from './SectionHead.astro';
+import Icon from './Icon.astro';
+
+const cards = [
+  { icon: 'mail', label: 'E-mail', value: site.email, href: `mailto:${site.email}` },
+  { icon: 'tel', label: 'Téléphone', value: site.phone, href: site.phoneHref },
+  { icon: 'chat', label: 'WhatsApp', value: site.phone, href: site.whatsapp, external: true },
+];
+const box = 'flex items-center gap-4 rounded-2xl border border-line bg-bg px-6 py-[22px] shadow-card text-body';
+---
+
+<section id="contact" class="section-soft">
+  <div class="wrap">
+    <SectionHead
+      index="05 · Coordonnées"
+      title="Contact direct"
+      summary="Vous pouvez me joindre par e-mail, par téléphone ou sur WhatsApp."
+    />
+
+    <div class="grid gap-[18px] md:grid-cols-2">
+      {cards.map((c) => (
+        <a
+          href={c.href}
+          class={`${box} group transition duration-200 hover:-translate-y-0.5 hover:border-line-hover hover:shadow-hover`}
+          {...(c.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+        >
+          <span class="inline-flex h-[46px] w-[46px] shrink-0 items-center justify-center rounded-xl bg-brand-soft text-brand transition group-hover:bg-brand group-hover:text-on-brand">
+            <Icon name={c.icon} class="h-[21px] w-[21px]" />
+          </span>
+          <div>
+            <span class="mb-0.5 block text-[0.76rem] font-semibold uppercase tracking-[0.07em] text-muted">{c.label}</span>
+            <strong class="text-[0.98rem] text-ink [overflow-wrap:anywhere]">{c.value}</strong>
+          </div>
+        </a>
+      ))}
+
+      <div class={box}>
+        <span class="inline-flex h-[46px] w-[46px] shrink-0 items-center justify-center rounded-xl bg-brand-soft text-brand">
+          <Icon name="pin" class="h-[21px] w-[21px]" />
+        </span>
+        <div>
+          <span class="mb-0.5 block text-[0.76rem] font-semibold uppercase tracking-[0.07em] text-muted">Localisation & Réseaux</span>
+          <strong class="text-[0.98rem] text-ink [overflow-wrap:anywhere]">
+            {site.location} ·
+            <a href={site.linkedin} target="_blank" rel="noopener noreferrer" class="text-brand hover:underline">LinkedIn</a> ·
+            <a href={site.github} target="_blank" rel="noopener noreferrer" class="text-brand hover:underline">GitHub</a>
+          </strong>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,63 @@
+---
+import { site, heroIntro, heroMetrics } from '../data/site';
+import Icon from './Icon.astro';
+---
+
+<section class="border-b border-line bg-bg py-16 pb-20 [background-image:radial-gradient(circle_at_88%_18%,var(--brand-soft)_0%,transparent_45%)]">
+  <div class="wrap grid items-center gap-14 lg:grid-cols-[1fr_310px]">
+    <div>
+      <div class="mb-[18px] inline-flex items-center gap-2 rounded-full border border-line bg-soft px-3.5 py-1 text-[0.84rem] font-semibold text-muted">
+        <span class="h-2 w-2 rounded-full bg-emerald-500 shadow-[0_0_0_3px_rgba(16,185,129,0.2)]" aria-hidden="true"></span>
+        <span>{site.location} · En poste chez {site.employer}</span>
+      </div>
+
+      <h1 class="mb-3 text-[clamp(2.3rem,4.6vw,3.35rem)] font-extrabold leading-[1.08] tracking-tight text-ink">{site.name}</h1>
+      <p class="mb-[18px] text-[1.18rem] font-bold text-brand">{site.tagline}</p>
+
+      <p class="mb-7 max-w-[640px] leading-[1.75] text-muted [&_strong]:font-semibold [&_strong]:text-ink" set:html={heroIntro} />
+
+      <div class="mb-9 flex flex-wrap gap-3">
+        <a href={site.cv} download={site.cvDownloadName} type="application/pdf" class="btn btn-solid">
+          <Icon name="download" class="h-[18px] w-[18px]" />
+          Télécharger le CV (PDF)
+        </a>
+        <a href={site.cv} target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+          <Icon name="file" class="h-[18px] w-[18px]" />
+          Consulter en ligne
+        </a>
+      </div>
+
+      <div class="grid max-w-[600px] gap-3.5 sm:grid-cols-3">
+        {heroMetrics.map((m) => (
+          <div class="rounded-xl border border-line bg-soft px-4 py-3">
+            <strong class="block text-[1.15rem] font-extrabold leading-tight text-brand">{m.value}</strong>
+            <span class="text-[0.8rem] text-muted">{m.label}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <div class="max-w-[290px] lg:max-w-none">
+      <div class="relative rounded-[20px] border border-line bg-bg p-3 shadow-hover before:absolute before:-inset-2 before:-z-10 before:rotate-2 before:rounded-[24px] before:bg-gradient-to-br before:from-brand-soft before:to-transparent">
+        <img
+          src="/profil.png"
+          alt={`Portrait de ${site.name}`}
+          width="399"
+          height="399"
+          class="aspect-[4/4.4] w-full rounded-xl bg-soft object-cover object-top"
+        />
+        <div class="flex items-center justify-center gap-2.5 pt-3 text-[0.85rem] font-semibold">
+          <a href={site.linkedin} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-body hover:text-brand" aria-label="LinkedIn">
+            <Icon name="linkedin" class="h-[15px] w-[15px] text-brand" /> LinkedIn
+          </a>
+          <span aria-hidden="true">·</span>
+          <a href={site.github} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-body hover:text-brand" aria-label="GitHub">
+            <Icon name="github" class="h-[15px] w-[15px] text-brand" /> GitHub
+          </a>
+          <span aria-hidden="true">·</span>
+          <a href={`mailto:${site.email}`} class="text-body hover:text-brand">E-mail</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

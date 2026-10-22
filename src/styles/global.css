@@ -1,0 +1,130 @@
+@import "tailwindcss";
+
+/* Le mode sombre suit la classe .dark posée sur <html> (bouton + préférence système) */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Identité visuelle conservée : bleu marine exécutif + ardoise, avec mode sombre */
+:root {
+  --bg: #ffffff;
+  --bg-soft: #f6f8fb;
+  --panel: #f1f5f9;
+  --brand: #14365d;
+  --brand-soft: rgba(20, 54, 93, 0.08);
+  --on-brand: #ffffff;
+  --ink: #0f172a;
+  --text: #1e293b;
+  --muted: #52637a;
+  --line: rgba(15, 23, 42, 0.08);
+  --line-hover: rgba(20, 54, 93, 0.24);
+  --green-bg: #ecfdf5;
+  --green-text: #047857;
+  --amber-bg: #fffbeb;
+  --amber-text: #b45309;
+  --shadow-card: 0 4px 20px -2px rgba(15, 23, 42, 0.05);
+  --shadow-hover: 0 14px 34px -4px rgba(15, 23, 42, 0.1);
+  color-scheme: light;
+}
+
+:root.dark {
+  --bg: #0b0f19;
+  --bg-soft: #0f1524;
+  --panel: #151c2e;
+  --brand: #8db4e8;
+  --brand-soft: rgba(141, 180, 232, 0.12);
+  --on-brand: #0b0f19;
+  --ink: #f1f5f9;
+  --text: #dbe4f0;
+  --muted: #9aaac0;
+  --line: rgba(255, 255, 255, 0.09);
+  --line-hover: rgba(141, 180, 232, 0.35);
+  --green-bg: rgba(16, 185, 129, 0.14);
+  --green-text: #34d399;
+  --amber-bg: rgba(245, 158, 11, 0.14);
+  --amber-text: #fbbf24;
+  --shadow-card: 0 4px 20px -2px rgba(0, 0, 0, 0.35);
+  --shadow-hover: 0 14px 34px -4px rgba(0, 0, 0, 0.5);
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-soft: var(--bg-soft);
+  --color-panel: var(--panel);
+  --color-brand: var(--brand);
+  --color-brand-soft: var(--brand-soft);
+  --color-on-brand: var(--on-brand);
+  --color-ink: var(--ink);
+  --color-body: var(--text);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-line-hover: var(--line-hover);
+  --color-ok-bg: var(--green-bg);
+  --color-ok: var(--green-text);
+  --color-warn-bg: var(--amber-bg);
+  --color-warn: var(--amber-text);
+  --shadow-card: var(--shadow-card);
+  --shadow-hover: var(--shadow-hover);
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 76px;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+}
+
+@layer components {
+  .wrap { @apply mx-auto w-full max-w-[1140px] px-6; }
+  .section { @apply py-20 bg-bg; }
+  .section-soft { @apply py-20 bg-soft border-y border-line; }
+
+  .card {
+    @apply rounded-2xl border border-line bg-bg shadow-card transition duration-200;
+  }
+  .card-hover { @apply hover:border-line-hover hover:shadow-hover hover:-translate-y-0.5; }
+
+  .tag { @apply inline-block rounded-md px-2.5 py-0.5 text-xs font-bold; }
+  .tag-brand { @apply bg-brand-soft text-brand; }
+  .tag-ok { @apply bg-ok-bg text-ok; }
+  .tag-warn { @apply bg-warn-bg text-warn; }
+  .tag-neutral { @apply bg-panel text-muted; }
+
+  .chip {
+    @apply rounded-md border border-line bg-bg px-2.5 py-1 text-[0.8rem] font-semibold text-body;
+  }
+  .chip-major { @apply bg-brand-soft border-brand/20 text-brand; }
+
+  .btn {
+    @apply inline-flex items-center gap-2 rounded-[10px] px-5 py-3 text-[0.94rem] font-semibold transition duration-200 hover:-translate-y-0.5;
+  }
+  .btn-solid { @apply bg-brand text-on-brand shadow-[0_4px_14px_rgba(20,54,93,0.22)] hover:opacity-90; }
+  .btn-outline { @apply border-[1.5px] border-brand/30 bg-bg text-brand hover:bg-soft hover:border-brand; }
+
+  .ext-link {
+    @apply inline-flex items-center gap-1 rounded-md bg-panel px-2.5 py-0.5 text-[0.78rem] font-semibold text-brand transition hover:bg-brand hover:text-on-brand;
+  }
+
+  .bullets { @apply flex flex-col gap-2; }
+  .bullets li { @apply relative pl-[18px] text-[0.92rem] leading-relaxed text-muted; }
+  .bullets li::before {
+    content: "";
+    @apply absolute left-0 top-[9px] h-1.5 w-1.5 rounded-full bg-brand;
+  }
+  .bullets li strong { @apply font-semibold text-body; }
+}
