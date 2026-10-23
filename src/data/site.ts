@@ -81,7 +81,7 @@ export const projects: Project[] = [
     context: 'Dev4Smart',
     role: 'Ingénieur Full-Stack, Mobile & DevOps',
     description:
-      "Plateforme de paiement électronique et de vérification d'identité (KYC) pour le Niger et l'UEMOA : recharge, cash-in et cash-out, encaissement marchand, cagnotte et e-commerce.",
+      "Plateforme de paiement électronique et de vérification d'identité (KYC) pour le Niger et l'UEMOA : recharge, cash-in et cash-out, encaissement, cagnotte, e-commerce et restauration.",
     bullets: [
       'Développement du backend (<strong>NestJS, Spring Boot</strong>) et intégration des passerelles Mobile Money et cartes bancaires.',
       'Portail web, console d\'administration en <strong>Angular 18</strong> et application mobile en <strong>Flutter</strong>.',
