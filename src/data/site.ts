@@ -58,7 +58,7 @@ export const projects: Project[] = [
     status: '2026 – En cours',
     statusTone: 'warn',
     title: 'Protype de plateforme de monnaie électronique et de services financiers digitaux',
-    context: 'Opérateur de télécommunications (nom non divulgué pour raison de confidentialité)',
+    context: 'Opérateur de télécommunications',
     role: 'Ingénieur Backend & DevOps',
     description:
       'Plateforme de mobile money et de services financiers digitaux organisée en 13 microservices.',
