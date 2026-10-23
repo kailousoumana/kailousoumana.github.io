@@ -217,12 +217,14 @@ export const degrees = [
   },
   {
     badge: '2018 – 2021 · Bac+3',
-    title: 'Licence professionnelle en génie logiciel',
-    text: "Mention Télécommunications et Informatique · École Supérieure des Télécommunications (EST, aujourd'hui ESCEP-Niger), Niamey",
+    title: 'Licence 3 en génie logiciel',
+    text: "École Supérieure des Télécommunications (EST, aujourd'hui ESCEP-Niger), Niamey",
   },
 ];
 
 export const languages = [
-  { badge: 'Usage courant & professionnel', title: 'Français', text: 'Excellent niveau : lu, écrit et parlé.' },
-  { badge: 'Usage technique', title: 'Anglais', text: "Très bon à l'écrit et en lecture de documentation technique, bon à l'oral." },
+  {badge: 'Usage courant & professionnel', title: 'Français', text: 'Excellent niveau : lu, écrit et parlé.',},
+  { badge: 'Usage technique', title: 'Anglais', text: 'Bon niveau : lu, écrit et parlé.',},
+  { badge: 'Langue locale', title: 'Zarma', text: 'Excellent niveau à l’oral, bon niveau à l’écrit et en lecture.',},
+  { badge: 'Langue locale', title: 'Haoussa', text: 'Bon niveau : lu, écrit et parlé.',},
 ];
