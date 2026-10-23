@@ -176,7 +176,7 @@ export const experience = [
     period: '12/2023 – 05/2024',
     company: 'Zamani Telecom',
     place: 'Niamey, Niger',
-    title: 'Ingénieur Services à Valeur Ajoutée (VAS)',
+    title: 'Stagiaire ingénieur Services à Valeur Ajoutée (VAS)',
     badge: { label: 'Opérateur télécom', tone: 'brand' },
     bullets: [
       'Supervision des services à valeur ajoutée en production et analyse des flux transactionnels.',
@@ -187,7 +187,7 @@ export const experience = [
     period: '09/2021 – 11/2021',
     company: 'CERMES-NIGER',
     place: 'Niamey, Niger',
-    title: 'Développeur Web',
+    title: 'Stagiaire développeur Web',
     badge: { label: 'Centre de recherche', tone: 'neutral' },
     bullets: [
       "Déploiement et administration d'une plateforme web sous Linux.",
