@@ -181,7 +181,7 @@ export const experience = [
     bullets: [
       'Supervision des services à valeur ajoutée en production et analyse des flux transactionnels.',
       "Suivi des plateformes, diagnostic et résolution d'incidents en lien avec les équipes réseau.",
-      "Développement d'une plateforme de suivi des transactions Zamani Cash (mobile money), sujet de mon travail de fin d'études.",
+      "Développement d'une plateforme de suivi des transactions Zamani Cash (mobile money)",
     ],
   },
   {
@@ -191,7 +191,7 @@ export const experience = [
     title: 'Stagiaire développeur Web',
     badge: { label: 'Centre de recherche', tone: 'neutral' },
     bullets: [
-      "Développement d'une application d'e-learning sur Moodle ; déploiement et mise en production sous Linux.",
+      "Développement d'une application d'e-learning sur Moodle.",
       'Support aux utilisateurs et maintenance corrective.',
       "Gestion des accès et administration des contenus.",
     ],
