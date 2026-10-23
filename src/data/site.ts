@@ -33,9 +33,9 @@ export const heroIntro =
   "Ingénieur en génie logiciel (<strong>Master, Bac+5</strong>), j'ai plus de deux ans d'expérience dans le développement d'applications pour la fintech et les télécoms. Je conçois et déploie des architectures backend (<strong>Spring Boot, NestJS, FastAPI</strong>), des applications web et mobiles (<strong>Angular 18, Flutter</strong>), des pipelines <strong>GitLab CI/CD &amp; Kubernetes</strong> ainsi que des briques d'IA (OCR, reconnaissance faciale) en production.";
 
 export const heroMetrics = [
-  { value: '13 microservices', label: 'Architecture Mobile Money' },
+  { value: '13 microservices', label: 'Prototype Mobile Money' },
   { value: '+200 000', label: 'Recharges sur SmartPay NE' },
-  { value: '7 plateformes', label: 'Déployées en production' },
+  { value: '8 plateformes', label: 'Déployées en production' },
 ];
 
 export type Project = {
@@ -57,11 +57,11 @@ export const projects: Project[] = [
     category: 'Mobile Money & Microservices',
     status: '2026 – En cours',
     statusTone: 'warn',
-    title: 'Protype de plateforme de monnaie électronique et de services financiers digitaux',
+    title: 'Prototype de plateforme de monnaie électronique et de services financiers digitaux',
     context: 'Opérateur de télécommunications',
     role: 'Ingénieur Backend & DevOps',
     description:
-      'Plateforme de mobile money et de services financiers digitaux organisée en 13 microservices.',
+      'Prototype de plateforme de mobile money et de services financiers digitaux organisée en 13 microservices.',
     bullets: [
       'Cœur financier en <strong>Spring Boot (Java 21)</strong>, orchestration en <strong>NestJS</strong> et inférence IA pour la vérification d\'identité en <strong>FastAPI</strong>.',
       'Événements distribués avec <strong>Kafka</strong> (patron Outbox), authentification <strong>Keycloak</strong> (OpenID Connect, JWT) et gestion des secrets avec <strong>HashiCorp Vault</strong>.',
@@ -181,6 +181,7 @@ export const experience = [
     bullets: [
       'Supervision des services à valeur ajoutée en production et analyse des flux transactionnels.',
       "Suivi des plateformes, diagnostic et résolution d'incidents en lien avec les équipes réseau.",
+      "Développement d'une plateforme de suivi des transactions Zamani Cash (mobile money), sujet de mon travail de fin d'études.",
     ],
   },
   {
@@ -190,8 +191,9 @@ export const experience = [
     title: 'Stagiaire développeur Web',
     badge: { label: 'Centre de recherche', tone: 'neutral' },
     bullets: [
-      "Déploiement et administration d'une plateforme web sous Linux.",
+      "Développement d'une application d'e-learning sur Moodle ; déploiement et mise en production sous Linux.",
       'Support aux utilisateurs et maintenance corrective.',
+      "Gestion des accès et administration des contenus.",
     ],
   },
 ];
