@@ -12,7 +12,7 @@ export const site = {
   phone: '+227 89 27 07 83',
   phoneHref: 'tel:+22789270783',
   whatsapp: 'https://wa.me/22789270783',
-  linkedin: 'https://www.linkedin.com/in/soumana-kailou-soumailou/',
+  linkedin: 'https://www.linkedin.com/in/soumana-soumailou-b73343438/',
   github: 'https://github.com/kailousoumana',
   cv: '/CV_SOUMAILOU_SOUMANA.pdf',
   cvDownloadName: 'CV_Soumana_Kailou_Soumailou.pdf',
