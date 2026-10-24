@@ -167,7 +167,7 @@ export const experience = [
     bullets: [
       "Développement de services backend et d'API REST (Spring Boot, NestJS, FastAPI) pour des plateformes de paiement et de monnaie électronique.",
       "Développement d'interfaces web en Angular 18 (portail et console d'administration) et d'applications mobiles en Flutter.",
-      'Mise en place de pipelines GitLab CI/CD, conteneurisation Docker et déploiement Kubernetes (Kustomize).',
+      'Mise en place de pipelines GitLab CI/CD, conteneurisation Docker et déploiement Kubernetes (Kustomize) pour les environnements local et de test.',
       "Intégration de services d'IA pour la vérification d'identité : OCR, reconnaissance faciale et détection de vivacité.",
       "Intégration d'API Mobile Money et de passerelles de paiement ; maintenance et exploitation des services en production.",
     ],
