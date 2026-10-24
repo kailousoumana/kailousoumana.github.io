@@ -162,7 +162,7 @@ export const experience = [
     period: '08/2024 – Présent',
     company: 'Dev4Smart',
     place: 'Niamey, Niger',
-    title: 'Ingénieur développeur de solutions web et mobiles',
+    title: 'Ingénieur développeur des solutions web et mobiles',
     badge: { label: 'Poste actuel', tone: 'ok' },
     bullets: [
       "Développement de services backend et d'API REST (Spring Boot, NestJS, FastAPI) pour des plateformes de paiement et de monnaie électronique.",
