@@ -58,7 +58,7 @@ export const projects: Project[] = [
     status: '2026 – En cours',
     statusTone: 'warn',
     title: 'Prototype de plateforme de monnaie électronique et de services financiers digitaux',
-    context: 'Opérateur de télécommunications',
+    context: 'Prototype proposé par Dev4Smart à un opérateur de télécommunications',
     role: 'Ingénieur Backend & DevOps',
     description:
       'Prototype de plateforme de mobile money et de services financiers digitaux organisée en 13 microservices.',
@@ -181,7 +181,7 @@ export const experience = [
     bullets: [
       'Supervision des services à valeur ajoutée en production et analyse des flux transactionnels.',
       "Suivi des plateformes, diagnostic et résolution d'incidents en lien avec les équipes réseau.",
-      "Développement d'une plateforme de suivi des transactions Zamani Cash (mobile money)",
+      "Développement d'une plateforme de suivi des transactions Zamani Cash (mobile money).",
     ],
   },
   {
