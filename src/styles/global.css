@@ -121,19 +121,23 @@ body {
   }
 
   .text-justified {
-    text-align: justify;
-    text-justify: inter-word;
-    hyphens: auto;
-    -webkit-hyphens: auto;
+    text-align: left;
   }
 
   .bullets { @apply flex flex-col gap-2; }
   .bullets li {
     @apply relative pl-[18px] text-[0.92rem] leading-relaxed text-muted;
-    text-align: justify;
-    text-justify: inter-word;
-    hyphens: auto;
-    -webkit-hyphens: auto;
+    text-align: left;
+  }
+
+  @media (min-width: 640px) {
+    .text-justified,
+    .bullets li {
+      text-align: justify;
+      text-justify: inter-word;
+      hyphens: auto;
+      -webkit-hyphens: auto;
+    }
   }
   .bullets li::before {
     content: "";

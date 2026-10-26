@@ -63,15 +63,15 @@ export const projects: Project[] = [
     description:
       'Prototype de plateforme de mobile money et de services financiers digitaux organisée en 13 microservices.',
     bullets: [
-      'Cœur financier en <strong>Spring Boot (Java 21)</strong>, orchestration en <strong>NestJS</strong> et inférence IA pour la vérification d\'identité en <strong>FastAPI</strong>.',
-      'Événements distribués avec <strong>Kafka</strong> (patron Outbox), authentification <strong>Keycloak</strong> (OpenID Connect, JWT) et gestion des secrets avec <strong>HashiCorp Vault</strong>.',
-      'Pipeline <strong>GitLab CI/CD</strong> en six étapes produisant des images Docker immuables et manifestes <strong>Kubernetes (Kustomize)</strong> pour les environnements local et de test.',
+      'Cœur financier en <strong>Spring Boot (Java 21)</strong> avec grand livre en partie double, orchestration en <strong>NestJS</strong> et inférence IA pour la vérification d\'identité en <strong>FastAPI</strong>.',
+      'Événements distribués avec <strong>Kafka</strong> (patron Outbox), migrations <strong>Flyway</strong>, authentification <strong>Keycloak</strong> (OpenID Connect, JWT RS256) et gestion des secrets avec <strong>HashiCorp Vault</strong>.',
+      'Pipeline <strong>GitLab CI/CD</strong> en six étapes (contrôles DevSecOps <strong>Gitleaks</strong> et <strong>Kubeconform</strong>), images Docker immuables et manifestes <strong>Kubernetes (Kustomize, NetworkPolicies)</strong>.',
     ],
     stats: [
       { value: '13', label: 'Microservices' },
       { value: '6 étapes', label: 'Pipeline CI/CD' },
     ],
-    tech: ['Spring Boot (Java 21)', 'NestJS', 'FastAPI', 'Apache Kafka', 'PostgreSQL', 'Keycloak', 'HashiCorp Vault', 'Kubernetes (Kustomize)', 'GitLab CI/CD', 'Docker'],
+    tech: ['Spring Boot (Java 21)', 'NestJS', 'FastAPI', 'Apache Kafka', 'PostgreSQL', 'Flyway', 'Keycloak', 'HashiCorp Vault', 'Kubernetes (Kustomize)', 'GitLab CI/CD', 'Docker'],
   },
   {
     category: 'Fintech & Biométrie KYC',
@@ -201,13 +201,13 @@ export const experience = [
 export const skills = [
   { icon: 'code', title: 'Backend & API', items: [['Spring Boot (Java 17/21)', 1], ['NestJS (TypeScript)', 1], ['FastAPI (Python)', 1], ['Symfony / Twig (PHP)', 0], ['API REST', 0]] },
   { icon: 'phone', title: 'Frontend & Mobile', items: [['Angular 18', 1], ['Flutter (Mobile)', 1], ['TypeScript', 0], ['HTML5 / CSS3', 0]] },
-  { icon: 'database', title: 'Données & Messagerie', items: [['PostgreSQL', 1], ['Apache Kafka', 1], ['Redis', 0], ['MySQL', 0]] },
-  { icon: 'server', title: 'DevOps & Exploitation', items: [['Docker', 1], ['Kubernetes (Kustomize)', 1], ['GitLab CI/CD', 1], ['Linux', 0], ['Nginx', 0], ['PM2', 0], ['Git', 0]] },
-  { icon: 'shield', title: 'Sécurité & Identité', items: [['Keycloak', 1], ['OAuth2', 0], ['OpenID Connect', 0], ['JWT', 0], ['HashiCorp Vault', 0]] },
+  { icon: 'database', title: 'Données & Messagerie', items: [['PostgreSQL', 1], ['Apache Kafka', 1], ['Redis', 0], ['MySQL', 0], ['Flyway', 0]] },
+  { icon: 'server', title: 'DevOps & Exploitation', items: [['Docker', 1], ['Kubernetes (Kustomize)', 1], ['GitLab CI/CD', 1], ['Linux', 0], ['Nginx', 0], ['PM2', 0], ['Gitleaks / Kubeconform', 0], ['Git', 0]] },
+  { icon: 'shield', title: 'Sécurité & Identité', items: [['Keycloak', 1], ['OAuth2', 0], ['OpenID Connect', 0], ['JWT (RS256)', 0], ['HashiCorp Vault', 0]] },
   { icon: 'scan', title: 'IA : OCR & Biométrie', items: [['PaddleOCR', 1], ['InsightFace (ONNX)', 1], ['Tesseract', 0], ['AWS Textract', 0], ['Silent-Face-Anti-Spoofing', 0]] },
 ] as { icon: string; title: string; items: [string, 0 | 1][] }[];
 
-export const extraSkills = ['Oracle Database & PL/SQL', 'GitHub Actions', 'Jenkins', 'RAG & IA générative'];
+export const extraSkills = ['Tests (JUnit / Mockito, Jest)', 'Principes SOLID & Architecture hexagonale', 'Oracle Database & PL/SQL', 'GitHub Actions', 'Jenkins', 'RAG & IA générative'];
 
 export const degrees = [
   {
