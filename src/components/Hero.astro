@@ -14,7 +14,7 @@ import Icon from './Icon.astro';
       <h1 class="mb-3 text-[clamp(2.3rem,4.6vw,3.35rem)] font-extrabold leading-[1.08] tracking-tight text-ink">{site.name}</h1>
       <p class="mb-[18px] text-[1.18rem] font-bold text-brand">{site.tagline}</p>
 
-      <p class="mb-7 max-w-[640px] leading-[1.75] text-muted [&_strong]:font-semibold [&_strong]:text-ink" set:html={heroIntro} />
+      <p class="mb-7 max-w-[640px] leading-[1.75] text-muted text-justified [&_strong]:font-semibold [&_strong]:text-ink" set:html={heroIntro} />
 
       <div class="mb-9 flex flex-wrap gap-3">
         <a href={site.cv} download={site.cvDownloadName} type="application/pdf" class="btn btn-solid">

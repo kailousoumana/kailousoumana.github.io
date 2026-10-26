@@ -120,8 +120,21 @@ body {
     @apply inline-flex items-center gap-1 rounded-md bg-panel px-2.5 py-0.5 text-[0.78rem] font-semibold text-brand transition hover:bg-brand hover:text-on-brand;
   }
 
+  .text-justified {
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+  }
+
   .bullets { @apply flex flex-col gap-2; }
-  .bullets li { @apply relative pl-[18px] text-[0.92rem] leading-relaxed text-muted; }
+  .bullets li {
+    @apply relative pl-[18px] text-[0.92rem] leading-relaxed text-muted;
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+  }
   .bullets li::before {
     content: "";
     @apply absolute left-0 top-[9px] h-1.5 w-1.5 rounded-full bg-brand;

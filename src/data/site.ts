@@ -225,6 +225,6 @@ export const degrees = [
 export const languages = [
   {badge: 'Usage courant & professionnel', title: 'Français', text: 'Excellent niveau : lu, écrit et parlé.',},
   { badge: 'Usage technique', title: 'Anglais', text: 'Bon niveau : lu, écrit et parlé.',},
-  { badge: 'Langue locale', title: 'Zarma', text: 'Excellent niveau à l’oral, bon niveau à l’écrit et en lecture.',},
+  { badge: 'Langue locale', title: 'Zarma', text: 'Excellent niveau à l\'oral et en lecture, bon niveau à l\'écrit',},
   { badge: 'Langue locale', title: 'Haoussa', text: 'Bon niveau : lu, écrit et parlé.',},
 ];
