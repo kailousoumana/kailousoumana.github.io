@@ -4,10 +4,10 @@ import Icon from './Icon.astro';
 const year = new Date().getFullYear();
 ---
 
-<footer class="bg-[#0b0f19] py-10 text-white/65">
+<footer class="border-t border-white/10 bg-[#080b12] py-10 text-white/65">
   <div class="wrap flex flex-wrap items-center justify-between gap-5">
     <div class="flex items-center gap-3">
-      <span class="inline-flex h-[38px] w-[38px] items-center justify-center rounded-[10px] bg-[#14365d] text-[0.92rem] font-extrabold tracking-wide text-white" aria-hidden="true">{site.initials}</span>
+      <span class="inline-flex h-[38px] w-[38px] shrink-0 items-center justify-center rounded-[10px] bg-gradient-to-br from-[#1b4677] to-[#0f2847] text-[0.92rem] font-extrabold tracking-wide text-white shadow-[0_3px_10px_rgba(0,0,0,0.35)] ring-1 ring-inset ring-white/20" aria-hidden="true">{site.initials}</span>
       <div>
         <strong class="block text-[0.98rem] text-white">{site.name}</strong>
         <p class="text-[0.84rem]">{site.role} · {site.location}</p>

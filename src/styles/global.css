@@ -7,6 +7,8 @@
 :root {
   --bg: #ffffff;
   --bg-soft: #f6f8fb;
+  --card: #ffffff;
+  --chip-bg: #ffffff;
   --panel: #f1f5f9;
   --brand: #14365d;
   --brand-soft: rgba(20, 54, 93, 0.08);
@@ -22,33 +24,39 @@
   --amber-text: #b45309;
   --shadow-card: 0 4px 20px -2px rgba(15, 23, 42, 0.05);
   --shadow-hover: 0 14px 34px -4px rgba(15, 23, 42, 0.1);
+  --shadow-btn: 0 4px 14px rgba(20, 54, 93, 0.22);
   color-scheme: light;
 }
 
 :root.dark {
   --bg: #0b0f19;
-  --bg-soft: #0f1524;
-  --panel: #151c2e;
+  --bg-soft: #0e1422;
+  --card: #131b2e;
+  --chip-bg: #19233a;
+  --panel: #182238;
   --brand: #8db4e8;
-  --brand-soft: rgba(141, 180, 232, 0.12);
+  --brand-soft: rgba(141, 180, 232, 0.14);
   --on-brand: #0b0f19;
   --ink: #f1f5f9;
   --text: #dbe4f0;
   --muted: #9aaac0;
-  --line: rgba(255, 255, 255, 0.09);
-  --line-hover: rgba(141, 180, 232, 0.35);
+  --line: rgba(255, 255, 255, 0.10);
+  --line-hover: rgba(141, 180, 232, 0.38);
   --green-bg: rgba(16, 185, 129, 0.14);
   --green-text: #34d399;
   --amber-bg: rgba(245, 158, 11, 0.14);
   --amber-text: #fbbf24;
-  --shadow-card: 0 4px 20px -2px rgba(0, 0, 0, 0.35);
-  --shadow-hover: 0 14px 34px -4px rgba(0, 0, 0, 0.5);
+  --shadow-card: 0 6px 24px -4px rgba(0, 0, 0, 0.45);
+  --shadow-hover: 0 16px 36px -4px rgba(0, 0, 0, 0.65);
+  --shadow-btn: 0 4px 16px rgba(141, 180, 232, 0.22);
   color-scheme: dark;
 }
 
 @theme inline {
   --color-bg: var(--bg);
   --color-soft: var(--bg-soft);
+  --color-card: var(--card);
+  --color-chip: var(--chip-bg);
   --color-panel: var(--panel);
   --color-brand: var(--brand);
   --color-brand-soft: var(--brand-soft);
@@ -95,7 +103,7 @@ body {
   .section-soft { @apply py-20 bg-soft border-y border-line; }
 
   .card {
-    @apply rounded-2xl border border-line bg-bg shadow-card transition duration-200;
+    @apply rounded-2xl border border-line bg-card shadow-card transition duration-200;
   }
   .card-hover { @apply hover:border-line-hover hover:shadow-hover hover:-translate-y-0.5; }
 
@@ -106,14 +114,14 @@ body {
   .tag-neutral { @apply bg-panel text-muted; }
 
   .chip {
-    @apply rounded-md border border-line bg-bg px-2.5 py-1 text-[0.8rem] font-semibold text-body;
+    @apply rounded-md border border-line bg-chip px-2.5 py-1 text-[0.8rem] font-semibold text-body;
   }
   .chip-major { @apply bg-brand-soft border-brand/20 text-brand; }
 
   .btn {
     @apply inline-flex items-center gap-2 rounded-[10px] px-5 py-3 text-[0.94rem] font-semibold transition duration-200 hover:-translate-y-0.5;
   }
-  .btn-solid { @apply bg-brand text-on-brand shadow-[0_4px_14px_rgba(20,54,93,0.22)] hover:opacity-90; }
+  .btn-solid { @apply bg-brand text-on-brand shadow-[var(--shadow-btn)] hover:opacity-90; }
   .btn-outline { @apply border-[1.5px] border-brand/30 bg-bg text-brand hover:bg-soft hover:border-brand; }
 
   .ext-link {
