@@ -30,7 +30,7 @@ export const nav = [
 ];
 
 export const heroIntro =
-  "Ingénieur en génie logiciel (<strong>Master, Bac+5</strong>), j'ai plus de deux ans d'expérience dans le développement d'applications pour la fintech, les télécoms et les systèmes métiers. Je conçois et déploie des architectures backend (<strong>Spring Boot, NestJS, FastAPI, Symfony</strong>), des interfaces web (<strong>Angular 18</strong>), des pipelines <strong>GitLab CI/CD &amp; Kubernetes</strong> ainsi que des briques d'IA (OCR, reconnaissance faciale) en production.";
+  "Ingénieur en génie logiciel (<strong>Master, Bac+5</strong>), j'ai plus de deux ans d'expérience dans le développement d'applications pour la fintech, les télécoms et les systèmes métiers. Je conçois et déploie des architectures backend (<strong>Spring Boot, NestJS, FastAPI, Symfony</strong>), des interfaces web (<strong>Angular</strong>), des pipelines <strong>GitLab CI/CD &amp; Kubernetes</strong> ainsi que des briques d'IA (OCR, reconnaissance faciale) en production.";
 
 export const heroMetrics = [
   { value: '13 microservices', label: 'Prototype Mobile Money' },
@@ -63,7 +63,7 @@ export const projects: Project[] = [
     description:
       'Prototype de plateforme de mobile money et de services financiers digitaux organisée en 13 microservices.',
     bullets: [
-      'Cœur financier en <strong>Spring Boot (Java 21)</strong> avec grand livre en partie double, orchestration en <strong>NestJS</strong> et inférence IA pour la vérification d\'identité en <strong>FastAPI</strong>.',
+      'Cœur financier en <strong>Spring Boot (Java)</strong> avec grand livre en partie double, orchestration en <strong>NestJS</strong> et inférence IA pour la vérification d\'identité en <strong>FastAPI</strong>.',
       'Événements distribués avec <strong>Kafka</strong> (patron Outbox), migrations <strong>Flyway</strong>, authentification <strong>Keycloak</strong> (OpenID Connect, JWT RS256) et gestion des secrets avec <strong>HashiCorp Vault</strong>.',
       'Pipeline <strong>GitLab CI/CD</strong> en six étapes (contrôles DevSecOps <strong>Gitleaks</strong> et <strong>Kubeconform</strong>), images Docker immuables et manifestes <strong>Kubernetes (Kustomize, NetworkPolicies)</strong>.',
     ],
@@ -71,7 +71,7 @@ export const projects: Project[] = [
       { value: '13', label: 'Microservices' },
       { value: '6 étapes', label: 'Pipeline CI/CD' },
     ],
-    tech: ['Spring Boot (Java 21)', 'NestJS', 'FastAPI', 'Apache Kafka', 'PostgreSQL', 'Flyway', 'Keycloak', 'HashiCorp Vault', 'Kubernetes (Kustomize)', 'GitLab CI/CD', 'Docker'],
+    tech: ['Spring Boot (Java)', 'NestJS', 'FastAPI', 'Apache Kafka', 'PostgreSQL', 'Flyway', 'Keycloak', 'HashiCorp Vault', 'Kubernetes (Kustomize)', 'GitLab CI/CD', 'Docker'],
   },
   {
     category: 'Fintech & Biométrie KYC',
@@ -84,7 +84,7 @@ export const projects: Project[] = [
       "Plateforme de paiement électronique et de vérification d'identité (KYC) pour le Niger et l'UEMOA : recharge, cash-in et cash-out, encaissement, cagnotte, e-commerce et restauration.",
     bullets: [
       'Développement du backend (<strong>NestJS, Spring Boot</strong>) et intégration des passerelles Mobile Money (Airtel, Moov, Zamani, Nita, Amana) et cartes bancaires.',
-      'Portail web et console d\'administration en <strong>Angular 18</strong> (tableaux de bord analytiques, supervision KYC / IA, contrôle d\'accès RBAC).',
+      'Portail web et console d\'administration en <strong>Angular</strong> (tableaux de bord analytiques, supervision KYC / IA, contrôle d\'accès RBAC).',
       'Module KYC conçu en tenant compte des exigences de la BCEAO : OCR (<strong>PaddleOCR, Tesseract, AWS Textract</strong>), comparaison faciale (<strong>InsightFace</strong>) et détection de vivacité.',
       'Déploiements par releases atomiques avec <strong>PM2</strong> et <strong>Nginx</strong>, avec retour arrière automatique.',
     ],
@@ -92,7 +92,7 @@ export const projects: Project[] = [
       { value: '+200 000', label: 'Recharges traitées' },
       { value: '+100M FCFA', label: 'Volume transité' },
     ],
-    tech: ['NestJS', 'Spring Boot', 'Angular 18', 'FastAPI', 'PostgreSQL', 'MySQL', 'Redis', 'GitLab CI/CD', 'Docker', 'PM2', 'Nginx'],
+    tech: ['NestJS', 'Spring Boot', 'Angular', 'FastAPI', 'PostgreSQL', 'MySQL', 'Redis', 'GitLab CI/CD', 'Docker', 'PM2', 'Nginx'],
     link: { href: 'https://smartpay.ne', label: 'smartpay.ne' },
   },
   {
@@ -188,7 +188,7 @@ export const experience = [
     badge: { label: 'Poste actuel', tone: 'ok' },
     bullets: [
       "Développement de services backend et d'API REST (Spring Boot, NestJS, FastAPI, Symfony) pour des plateformes de paiement, de monnaie électronique et des systèmes métiers.",
-      "Développement d'interfaces web en Angular 18 et Twig (portails, consoles d'administration) ; accompagnement des équipes frontend, bonnes pratiques et revues de code.",
+      "Développement d'interfaces web en Angular et Twig (portails, consoles d'administration) ; accompagnement des équipes frontend, bonnes pratiques et revues de code.",
       'Mise en place de pipelines GitLab CI/CD, conteneurisation Docker et déploiement Kubernetes (Kustomize) pour les environnements local et de test.',
       "Intégration de services d'IA pour la vérification d'identité : OCR, reconnaissance faciale et détection de vivacité.",
       "Intégration d'API Mobile Money et de passerelles de paiement ; maintenance et exploitation des services en production.",
@@ -221,8 +221,8 @@ export const experience = [
 ];
 
 export const skills = [
-  { icon: 'code', title: 'Backend & API', items: [['Spring Boot (Java 17/21)', 1], ['NestJS (TypeScript)', 1], ['FastAPI (Python)', 1], ['Symfony / Twig (PHP)', 1], ['API REST', 0]] },
-  { icon: 'phone', title: 'Frontend & Web', items: [['Angular 18', 1], ['TypeScript', 1], ['RxJS', 0], ['HTML5 / CSS3 / SCSS', 0], ['Bootstrap', 0]] },
+  { icon: 'code', title: 'Backend & API', items: [['Spring Boot (Java)', 1], ['NestJS (TypeScript)', 1], ['FastAPI (Python)', 1], ['Symfony / Twig (PHP)', 1], ['API REST', 0]] },
+  { icon: 'phone', title: 'Frontend & Web', items: [['Angular', 1], ['TypeScript', 1], ['RxJS', 0], ['HTML5 / CSS3 / SCSS', 0], ['Bootstrap', 0]] },
   { icon: 'database', title: 'Données & Messagerie', items: [['PostgreSQL', 1], ['MySQL', 1], ['Apache Kafka', 1], ['Redis', 0], ['Flyway / TypeORM', 0]] },
   { icon: 'server', title: 'DevOps & Exploitation', items: [['Docker', 1], ['Kubernetes (Kustomize)', 1], ['GitLab CI/CD', 1], ['Linux', 0], ['Nginx', 0], ['PM2', 0], ['Gitleaks / Kubeconform', 0], ['Git', 0]] },
   { icon: 'shield', title: 'Sécurité & Identité', items: [['Keycloak', 1], ['OAuth2', 0], ['OpenID Connect', 0], ['JWT (RS256)', 0], ['HashiCorp Vault', 0]] },
