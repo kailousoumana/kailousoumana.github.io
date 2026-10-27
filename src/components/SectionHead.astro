@@ -2,15 +2,11 @@
 interface Props {
   index: string;
   title: string;
-  summary: string;
 }
-const { index, title, summary } = Astro.props;
+const { index, title } = Astro.props;
 ---
 
-<div class="mb-10 flex flex-wrap items-end justify-between gap-x-8 gap-y-4 border-b border-line pb-5">
-  <div>
-    <span class="mb-1.5 block text-[0.78rem] font-bold uppercase tracking-[0.12em] text-brand">{index}</span>
-    <h2 class="text-[clamp(1.7rem,3vw,2.15rem)] font-extrabold tracking-tight text-ink">{title}</h2>
-  </div>
-  <p class="max-w-[440px] text-[0.94rem] text-muted text-justified">{summary}</p>
+<div class="mb-10 border-b border-line pb-5">
+  <span class="mb-1.5 block text-[0.78rem] font-bold uppercase tracking-[0.12em] text-brand">{index}</span>
+  <h2 class="text-[clamp(1.7rem,3vw,2.15rem)] font-extrabold tracking-tight text-ink">{title}</h2>
 </div>

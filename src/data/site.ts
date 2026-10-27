@@ -125,7 +125,6 @@ export const projects: Project[] = [
 export type OtherProject = {
   domain: string;
   title: string;
-  context: string;
   role: string;
   description: string;
   tech: string[];
@@ -136,7 +135,6 @@ export const otherProjects: OtherProject[] = [
   {
     domain: 'Enseignement supérieur',
     title: 'CVthèque — Université Abdou Moumouni',
-    context: 'Dev4Smart',
     role: 'Développeur Full-Stack Symfony',
     description:
       "Plateforme de valorisation et de visibilité des enseignants-chercheurs de l'Université Abdou Moumouni de Niamey : publications, projets et parcours académiques.",
@@ -146,7 +144,6 @@ export const otherProjects: OtherProject[] = [
   {
     domain: 'Publication scientifique',
     title: 'Presses Universitaires — Université Abdou Moumouni',
-    context: 'Dev4Smart',
     role: 'Développeur Full-Stack Symfony',
     description:
       "Système de publication scientifique numérique de l'Université Abdou Moumouni : soumission des travaux, révision par les pairs, workflow éditorial et archivage.",
@@ -156,7 +153,6 @@ export const otherProjects: OtherProject[] = [
   {
     domain: 'Institution financière',
     title: 'SAHFI SA — Société Sahélienne de Financement',
-    context: 'Dev4Smart',
     role: 'Développeur Full-Stack Symfony',
     description: 'Portail institutionnel moderne avec espace client sécurisé et optimisation du référencement naturel (SEO).',
     tech: ['Symfony', 'Twig', 'SEO'],

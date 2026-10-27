@@ -9,7 +9,6 @@ import Icon from './Icon.astro';
     <SectionHead
       index="01 · Réalisations"
       title="Projets & Architectures"
-      summary="Systèmes financiers, plateformes de paiement et applications métiers développés et déployés."
     />
 
     <div class="flex flex-col gap-6">
@@ -28,7 +27,7 @@ import Icon from './Icon.astro';
             </div>
             <h3 class="mb-1 text-[1.25rem] font-bold text-ink">{p.title}</h3>
             <p class="mb-3 text-[0.9rem] text-muted">{p.context} · <strong class="text-body">{p.role}</strong></p>
-            <p class="mb-3.5 text-[0.96rem] text-body text-justified">{p.description}</p>
+            <p class="mb-3.5 text-[0.96rem] text-body">{p.description}</p>
             {p.bullets && (
               <ul class="bullets">
                 {p.bullets.map((b) => <li set:html={b} />)}
@@ -71,8 +70,8 @@ import Icon from './Icon.astro';
             </div>
           </div>
           <h4 class="mb-1 text-[1.08rem] font-bold text-ink">{o.title}</h4>
-          <p class="mb-2.5 text-[0.83rem] text-muted">{o.context} · <strong class="text-body">{o.role}</strong></p>
-          <p class="mb-4 flex-1 text-[0.91rem] text-muted text-justified">{o.description}</p>
+          <p class="mb-2.5 text-[0.83rem] font-semibold text-body">{o.role}</p>
+          <p class="mb-4 flex-1 text-[0.91rem] text-muted">{o.description}</p>
           <div class="flex flex-wrap gap-[7px]">
             {o.tech.map((t) => <span class="chip">{t}</span>)}
           </div>
