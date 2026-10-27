@@ -30,7 +30,7 @@ export const nav = [
 ];
 
 export const heroIntro =
-  "Ingénieur en génie logiciel (<strong>Master, Bac+5</strong>), j'ai plus de deux ans d'expérience dans le développement d'applications pour la fintech, les télécoms et les systèmes métiers. Je conçois et déploie des architectures backend (<strong>Spring Boot, NestJS, FastAPI, Symfony</strong>) et des interfaces web (<strong>Angular</strong>), avec des pipelines <strong>GitLab CI/CD</strong> et la conteneurisation <strong>Docker</strong> (<strong>Kubernetes</strong> en environnements local et de test). J'intègre des briques d'IA (OCR, reconnaissance faciale, détection de vivacité) dans une plateforme de paiement en production.";
+  "Ingénieur en génie logiciel (<strong>Master, Bac+5</strong>), j'ai plus de deux ans d'expérience dans le développement d'applications pour la fintech, les télécoms et les systèmes métiers. Je conçois et déploie des architectures backend (<strong>Spring Boot, NestJS, FastAPI, Symfony</strong>) et des interfaces web (<strong>Angular</strong>), avec des pipelines <strong>GitLab CI/CD</strong> et la conteneurisation <strong>Docker</strong> (<strong>Kubernetes</strong> en environnements local et de test). J'intègre des briques d'IA (OCR, reconnaissance faciale, détection de vivacité) dans des plateformes financières et de paiement, dont SmartPay NE en production.";
 
 // Les chiffres de production d'abord ; le prototype est clairement identifié comme tel.
 export const heroMetrics = [
@@ -104,7 +104,7 @@ export const projects: Project[] = [
     context: 'Dev4Smart · Financement ENABEL (projet Reel Mahita)',
     role: 'Ingénieur Services Digitaux, Backend & Déploiement',
     description:
-      'Conception, développement et mise en production des deux plateformes web et mobile réalisées pour les lauréates du hackathon pastoral 2024 : Proxilait (entreprise Amansi) et Dairy EduTech.',
+      'Conception, développement et mise en production des deux plateformes web et mobile réalisées pour les entrepreneures lauréates du hackathon pastoral 2024 : Proxilait (entreprise Amansi) et Dairy EduTech.',
     bullets: [
       '<strong>Proxilait (entreprise Amansi)</strong> : digitalisation de la chaîne de valeur laitière, de la collecte à la distribution. Backend (monolithe <strong>NestJS / MySQL</strong> et microservices <strong>Spring Boot / PostgreSQL</strong>) et portail web d\'administration en <strong>Angular</strong>.',
       '<strong>Dairy EduTech</strong> : plateforme de formation en ligne pour la filière laitière (cours interactifs, quiz, suivi des apprenants, certification). Backend et API REST en <strong>NestJS</strong> et <strong>MySQL</strong>.',
@@ -135,7 +135,7 @@ export const otherProjects: OtherProject[] = [
   {
     domain: 'Enseignement supérieur',
     title: 'CVthèque — Université Abdou Moumouni',
-    role: 'Développeur Full-Stack Symfony',
+    role: 'Ingénieur Full-Stack Symfony',
     description:
       "Plateforme de valorisation et de visibilité des enseignants-chercheurs de l'Université Abdou Moumouni de Niamey : publications, projets et parcours académiques.",
     tech: ['Symfony', 'Twig'],
@@ -144,7 +144,7 @@ export const otherProjects: OtherProject[] = [
   {
     domain: 'Publication scientifique',
     title: 'Presses Universitaires — Université Abdou Moumouni',
-    role: 'Développeur Full-Stack Symfony',
+    role: 'Ingénieur Full-Stack Symfony',
     description:
       "Système de publication scientifique numérique de l'Université Abdou Moumouni : soumission des travaux, révision par les pairs, workflow éditorial et archivage.",
     tech: ['Symfony', 'Twig', 'Symfony Workflow'],
@@ -153,7 +153,7 @@ export const otherProjects: OtherProject[] = [
   {
     domain: 'Institution financière',
     title: 'SAHFI SA — Société Sahélienne de Financement',
-    role: 'Développeur Full-Stack Symfony',
+    role: 'Ingénieur Full-Stack Symfony',
     description: 'Portail institutionnel moderne avec espace client sécurisé et optimisation du référencement naturel (SEO).',
     tech: ['Symfony', 'Twig', 'SEO'],
     links: [{ href: 'https://www.sahfi.net', label: 'sahfi.net' }],

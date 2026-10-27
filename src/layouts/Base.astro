@@ -5,10 +5,12 @@ import { site } from '../data/site';
 interface Props {
   title?: string;
   description?: string;
+  noindex?: boolean;
 }
 const {
   title = `${site.name} — ${site.role}`,
   description = site.description,
+  noindex = false,
 } = Astro.props;
 
 const canonical = site.url;
@@ -38,8 +40,8 @@ const jsonLd = {
     <meta name="color-scheme" content="light dark" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <link rel="canonical" href={canonical} />
-    <meta name="robots" content="index, follow" />
+    {!noindex && <link rel="canonical" href={canonical} />}
+    <meta name="robots" content={noindex ? 'noindex, nofollow' : 'index, follow'} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonical} />
     <meta property="og:title" content={title} />

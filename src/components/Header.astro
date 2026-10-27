@@ -101,4 +101,11 @@ import Icon from './Icon.astro';
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') setMenuOpen(false);
   });
+
+  document.addEventListener('click', (e) => {
+    const header = document.querySelector('header');
+    if (header && e.target instanceof Node && !header.contains(e.target)) {
+      setMenuOpen(false);
+    }
+  });
 </script>
