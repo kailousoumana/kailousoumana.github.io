@@ -40,10 +40,12 @@ import Icon from './Icon.astro';
     <div class="max-w-[290px] lg:max-w-none">
       <div class="relative rounded-[20px] border border-line bg-card p-3 shadow-hover before:absolute before:-inset-2 before:-z-10 before:rotate-2 before:rounded-[24px] before:bg-gradient-to-br before:from-brand-soft before:to-transparent">
         <img
-          src="/profil.png"
+          src="/profil.webp"
           alt={`Portrait de ${site.name}`}
           width="399"
           height="399"
+          fetchpriority="high"
+          decoding="async"
           class="aspect-[4/4.4] w-full rounded-xl bg-gradient-to-b from-[#eef3f9] to-[#e2eaf4] object-cover object-top dark:from-[#1a253b] dark:to-[#111827]"
         />
         <div class="flex items-center justify-center gap-2.5 pt-3 text-[0.85rem] font-semibold">

@@ -1,7 +1,10 @@
 ---
-import { skills, extraSkills } from '../data/site';
+import { skills, notions, levelLegend } from '../data/site';
+import type { Level } from '../data/site';
 import SectionHead from './SectionHead.astro';
 import Icon from './Icon.astro';
+
+const chipClass: Record<Level, string> = { prod: 'chip chip-major', proto: 'chip', notion: 'chip chip-notion' };
 ---
 
 <section id="competences" class="section-soft">
@@ -9,10 +12,16 @@ import Icon from './Icon.astro';
     <SectionHead
       index="03 · Stack technique"
       title="Compétences & Outils"
-      summary="Technologies pratiquées sur des projets en production et connaissances complémentaires."
+      summary="Classées selon le contexte d'usage réel : en production, sur prototype ou en labo, ou simples notions."
     />
 
-    <div class="grid gap-[18px] sm:grid-cols-2 lg:grid-cols-3">
+    <ul class="mb-6 flex flex-wrap items-center gap-x-4 gap-y-2 text-[0.84rem] text-muted" aria-label="Légende des niveaux">
+      {levelLegend.map((l) => (
+        <li class="flex items-center gap-2"><span class={chipClass[l.level]}>{l.label}</span></li>
+      ))}
+    </ul>
+
+    <div class="grid grid-cols-1 gap-[18px] sm:grid-cols-2 lg:grid-cols-3">
       {skills.map((s) => (
         <div class="card card-hover p-6">
           <div class="mb-4 flex items-center gap-3">
@@ -22,20 +31,20 @@ import Icon from './Icon.astro';
             <h3 class="text-[1.02rem] font-bold text-ink">{s.title}</h3>
           </div>
           <div class="flex flex-wrap gap-[7px]">
-            {s.items.map(([label, major]) => <span class={`chip ${major ? 'chip-major' : ''}`}>{label}</span>)}
+            {s.items.map(([label, level]) => <span class={chipClass[level]}>{label}</span>)}
           </div>
         </div>
       ))}
 
-      <div class="card card-hover p-6 sm:col-span-2 lg:col-span-3">
+      <div class="card card-hover p-6 sm:col-span-2">
         <div class="mb-4 flex items-center gap-3">
           <span class="inline-flex h-[38px] w-[38px] items-center justify-center rounded-[10px] bg-brand-soft text-brand">
             <Icon name="layers" class="h-[19px] w-[19px]" />
           </span>
-          <h3 class="text-[1.02rem] font-bold text-ink">Connaissances complémentaires</h3>
+          <h3 class="text-[1.02rem] font-bold text-ink">Notions en cours d'approfondissement</h3>
         </div>
         <div class="flex flex-wrap gap-[7px]">
-          {extraSkills.map((x) => <span class="chip">{x}</span>)}
+          {notions.map((x) => <span class={chipClass.notion}>{x}</span>)}
         </div>
       </div>
     </div>

@@ -17,8 +17,8 @@ export const site = {
   cv: '/CV_SOUMAILOU_SOUMANA.pdf',
   cvDownloadName: 'CV_Soumana_Kailou_Soumailou.pdf',
   description:
-    "Ingénieur en génie logiciel à Niamey : backend (Spring Boot, NestJS, FastAPI), API, CI/CD GitLab, Kubernetes, Angular et intégration d'IA. Projets, expérience et CV.",
-  ogImage: '/profil.png',
+    "Ingénieur logiciel à Niamey : API et microservices (Spring Boot, NestJS, FastAPI), Angular, CI/CD GitLab, sécurité (OAuth2, JWT) et IA appliquée au KYC. Projets et CV.",
+  ogImage: '/og.png',
 };
 
 export const nav = [
@@ -30,12 +30,13 @@ export const nav = [
 ];
 
 export const heroIntro =
-  "Ingénieur en génie logiciel (<strong>Master, Bac+5</strong>), j'ai plus de deux ans d'expérience dans le développement d'applications pour la fintech, les télécoms et les systèmes métiers. Je conçois et déploie des architectures backend (<strong>Spring Boot, NestJS, FastAPI, Symfony</strong>), des interfaces web (<strong>Angular</strong>), des pipelines <strong>GitLab CI/CD &amp; Kubernetes</strong> ainsi que des briques d'IA (OCR, reconnaissance faciale) en production.";
+  "Ingénieur en génie logiciel (<strong>Master, Bac+5</strong>), j'ai plus de deux ans d'expérience dans le développement d'applications pour la fintech, les télécoms et les systèmes métiers. Je conçois et déploie des architectures backend (<strong>Spring Boot, NestJS, FastAPI, Symfony</strong>) et des interfaces web (<strong>Angular</strong>), avec des pipelines <strong>GitLab CI/CD</strong> et la conteneurisation <strong>Docker</strong> (<strong>Kubernetes</strong> en environnements local et de test). J'intègre des briques d'IA (OCR, reconnaissance faciale, détection de vivacité) dans une plateforme de paiement en production.";
 
+// Les chiffres de production d'abord ; le prototype est clairement identifié comme tel.
 export const heroMetrics = [
-  { value: '13 microservices', label: 'Prototype Mobile Money' },
-  { value: '+200 000', label: 'Recharges sur SmartPay NE' },
-  { value: '6 plateformes', label: 'Déployées en production' },
+  { value: '+200 000', label: 'Recharges traitées (SmartPay NE)' },
+  { value: '6 plateformes', label: 'En production chez Dev4Smart' },
+  { value: '13 microservices', label: 'Prototype hors production' },
 ];
 
 export type Project = {
@@ -49,13 +50,13 @@ export type Project = {
   bullets?: string[];
   stats: { value: string; label: string }[];
   tech: string[];
-  link?: { href: string; label: string };
+  links?: { href: string; label: string }[];
 };
 
 export const projects: Project[] = [
   {
     category: 'Mobile Money & Microservices',
-    status: '2026 – En cours',
+    status: '2026 · Prototype, hors production',
     statusTone: 'warn',
     title: 'Prototype de plateforme de monnaie électronique et de services financiers digitaux',
     context: 'Prototype proposé par Dev4Smart à un opérateur de télécommunications',
@@ -93,7 +94,7 @@ export const projects: Project[] = [
       { value: '+100M FCFA', label: 'Volume transité' },
     ],
     tech: ['NestJS', 'Spring Boot', 'Angular', 'FastAPI', 'PostgreSQL', 'MySQL', 'Redis', 'GitLab CI/CD', 'Docker', 'PM2', 'Nginx'],
-    link: { href: 'https://smartpay.ne', label: 'smartpay.ne' },
+    links: [{ href: 'https://smartpay.ne', label: 'smartpay.ne' }],
   },
   {
     category: 'Secteur pastoral & Agritech · Web & Mobile',
@@ -103,10 +104,10 @@ export const projects: Project[] = [
     context: 'Dev4Smart · Financement ENABEL (projet Reel Mahita)',
     role: 'Ingénieur Services Digitaux, Backend & Déploiement',
     description:
-      'Conception, développement et mise en production des deux plateformes web et mobile réalisées pour les lauréats du hackathon pastoral 2024 : Proxilait (entreprise Amansi) et Dairy EduTech.',
+      'Conception, développement et mise en production des deux plateformes web et mobile réalisées pour les lauréates du hackathon pastoral 2024 : Proxilait (entreprise Amansi) et Dairy EduTech.',
     bullets: [
-      '<strong>Proxilait (entreprise Amansi)</strong> : développement du backend (monolithe <strong>NestJS / MySQL</strong> et microservices <strong>Spring Boot / PostgreSQL</strong>) et du portail web d\'administration en <strong>Angular</strong>.',
-      '<strong>Dairy EduTech</strong> : développement du backend et des API REST en <strong>NestJS</strong> et <strong>MySQL</strong> pour la formation et la certification en ligne.',
+      '<strong>Proxilait (entreprise Amansi)</strong> : digitalisation de la chaîne de valeur laitière, de la collecte à la distribution. Backend (monolithe <strong>NestJS / MySQL</strong> et microservices <strong>Spring Boot / PostgreSQL</strong>) et portail web d\'administration en <strong>Angular</strong>.',
+      '<strong>Dairy EduTech</strong> : plateforme de formation en ligne pour la filière laitière (cours interactifs, quiz, suivi des apprenants, certification). Backend et API REST en <strong>NestJS</strong> et <strong>MySQL</strong>.',
       'Mise en production sous <strong>Linux</strong> et <strong>Docker</strong>, formation et accompagnement technique des bénéficiaires.',
     ],
     stats: [
@@ -114,6 +115,10 @@ export const projects: Project[] = [
       { value: 'ENABEL', label: 'Projet Reel Mahita' },
     ],
     tech: ['NestJS', 'Spring Boot', 'Angular', 'PostgreSQL', 'MySQL', 'API REST', 'Docker', 'Linux'],
+    links: [
+      { href: 'https://www.amansi.app', label: 'amansi.app' },
+      { href: 'https://www.dairyedutech.com', label: 'dairyedutech.com' },
+    ],
   },
 ];
 
@@ -128,26 +133,6 @@ export type OtherProject = {
 };
 
 export const otherProjects: OtherProject[] = [
-  {
-    domain: 'Filière laitière · Agritech',
-    title: 'Proxilait — Entreprise Amansi',
-    context: 'Dev4Smart · Financement ENABEL (Reel Mahita)',
-    role: 'Développeur Backend & Portail Admin Angular',
-    description:
-      'Application de digitalisation de la chaîne de valeur laitière au Niger, de la collecte à la distribution : backend monolithique (NestJS / MySQL), microservices (Spring Boot / PostgreSQL) et portail d\'administration en Angular.',
-    tech: ['NestJS', 'Spring Boot', 'Angular', 'PostgreSQL', 'MySQL'],
-    links: [{ href: 'https://www.amansi.app', label: 'amansi.app' }],
-  },
-  {
-    domain: 'E-learning · EdTech',
-    title: 'Dairy EduTech',
-    context: 'Dev4Smart · Financement ENABEL (Reel Mahita)',
-    role: 'Développeur Backend',
-    description:
-      "Plateforme de formation en ligne dédiée à l'élevage et à la filière laitière (cours interactifs, quiz, suivi des apprenants et certification) : développement du backend en NestJS et MySQL.",
-    tech: ['NestJS', 'MySQL'],
-    links: [{ href: 'https://www.dairyedutech.com', label: 'dairyedutech.com' }],
-  },
   {
     domain: 'Enseignement supérieur',
     title: 'CVthèque — Université Abdou Moumouni',
@@ -220,16 +205,29 @@ export const experience = [
   },
 ];
 
-export const skills = [
-  { icon: 'code', title: 'Backend & API', items: [['Spring Boot (Java)', 1], ['NestJS (TypeScript)', 1], ['FastAPI (Python)', 1], ['Symfony / Twig (PHP)', 1], ['API REST', 0]] },
-  { icon: 'phone', title: 'Frontend & Web', items: [['Angular', 1], ['TypeScript', 1], ['RxJS', 0], ['HTML5 / CSS3 / SCSS', 0], ['Bootstrap', 0]] },
-  { icon: 'database', title: 'Données & Messagerie', items: [['PostgreSQL', 1], ['MySQL', 1], ['Apache Kafka', 1], ['Redis', 0], ['Flyway / TypeORM', 0]] },
-  { icon: 'server', title: 'DevOps & Exploitation', items: [['Docker', 1], ['Kubernetes (Kustomize)', 1], ['GitLab CI/CD', 1], ['Linux', 0], ['Nginx', 0], ['PM2', 0], ['Gitleaks / Kubeconform', 0], ['Git', 0]] },
-  { icon: 'shield', title: 'Sécurité & Identité', items: [['Keycloak', 1], ['OAuth2', 0], ['OpenID Connect', 0], ['JWT (RS256)', 0], ['HashiCorp Vault', 0]] },
-  { icon: 'scan', title: 'IA : OCR & Biométrie', items: [['PaddleOCR', 1], ['InsightFace (ONNX)', 1], ['Tesseract', 0], ['AWS Textract', 0], ['Silent-Face-Anti-Spoofing', 0]] },
-] as { icon: string; title: string; items: [string, 0 | 1][] }[];
+// Niveau = contexte d'usage réel, pas un auto-classement :
+//  prod   : utilisé sur une plateforme en production (SmartPay NE, plateformes ENABEL, sites institutionnels)
+//  proto  : utilisé sur le prototype Mobile Money ou en labo (local / test)
+//  notion : connaissances en cours d'acquisition, sans mise en production
+export type Level = 'prod' | 'proto' | 'notion';
 
-export const extraSkills = ['Tests (JUnit / Mockito, Jest)', 'Principes SOLID & Architecture hexagonale', 'Oracle Database & PL/SQL', 'GitHub Actions', 'Jenkins', 'RAG & IA générative'];
+export const levelLegend: { level: Level; label: string }[] = [
+  { level: 'prod', label: 'En production' },
+  { level: 'proto', label: 'Prototype / labo' },
+  { level: 'notion', label: 'Notions' },
+];
+
+export const skills = [
+  { icon: 'code', title: 'Backend & API', items: [['Spring Boot (Java)', 'prod'], ['NestJS (TypeScript)', 'prod'], ['FastAPI (Python)', 'prod'], ['Symfony / Twig (PHP)', 'prod'], ['API REST', 'prod']] },
+  { icon: 'phone', title: 'Frontend & Web', items: [['Angular', 'prod'], ['TypeScript', 'prod'], ['RxJS', 'prod'], ['HTML5 / CSS3 / SCSS', 'prod'], ['Bootstrap', 'prod']] },
+  { icon: 'database', title: 'Données & Messagerie', items: [['PostgreSQL', 'prod'], ['MySQL', 'prod'], ['Redis', 'prod'], ['TypeORM', 'prod'], ['Apache Kafka', 'proto'], ['Flyway', 'proto']] },
+  { icon: 'server', title: 'DevOps & Exploitation', items: [['Docker', 'prod'], ['GitLab CI/CD', 'prod'], ['Linux', 'prod'], ['Nginx', 'prod'], ['PM2', 'prod'], ['Git', 'prod'], ['Kubernetes (Kustomize)', 'proto'], ['Gitleaks / Kubeconform', 'proto']] },
+  { icon: 'shield', title: 'Sécurité & Identité', items: [['JWT (RS256)', 'prod'], ['Keycloak', 'proto'], ['OAuth2', 'proto'], ['OpenID Connect', 'proto'], ['HashiCorp Vault', 'proto']] },
+  { icon: 'scan', title: 'IA : OCR & Biométrie', items: [['PaddleOCR', 'prod'], ['InsightFace (ONNX)', 'prod'], ['Tesseract', 'prod'], ['AWS Textract', 'prod'], ['Silent-Face-Anti-Spoofing', 'prod']] },
+  { icon: 'file', title: 'Qualité & méthodes', items: [['Tests (JUnit / Mockito, Jest)', 'prod'], ['Revues de code', 'prod'], ['Documentation OpenAPI', 'prod'], ['SOLID & architecture hexagonale', 'prod'], ['Agile / Scrum', 'prod']] },
+] as { icon: string; title: string; items: [string, Level][] }[];
+
+export const notions: string[] = ['Oracle Database & PL/SQL', 'GitHub Actions', 'Jenkins', 'RAG & IA générative'];
 
 export const degrees = [
   {

@@ -13,12 +13,15 @@ const {
 
 const canonical = site.url;
 const ogImage = new URL(site.ogImage, site.url).href;
+const ogAlt = `${site.name} — ${site.role}`;
 
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Person',
   name: site.name,
   jobTitle: site.role,
+  image: new URL('/profil.png', site.url).href,
+  knowsAbout: ['Spring Boot', 'NestJS', 'FastAPI', 'Angular', 'Microservices', 'GitLab CI/CD', 'OAuth2', 'KYC'],
   url: site.url,
   address: { '@type': 'PostalAddress', addressLocality: 'Niamey', addressCountry: 'NE' },
   worksFor: { '@type': 'Organization', name: site.employer },
@@ -42,8 +45,17 @@ const jsonLd = {
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={ogAlt} />
+    <meta property="og:site_name" content={site.name} />
     <meta property="og:locale" content="fr_FR" />
-    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image:alt" content={ogAlt} />
+    <meta name="theme-color" content="#14365d" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />

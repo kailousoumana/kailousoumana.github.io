@@ -4,16 +4,16 @@ import Icon from './Icon.astro';
 ---
 
 <header class="sticky top-0 z-[1000] border-b border-line bg-bg/90 backdrop-blur-md">
-  <div class="wrap flex items-center justify-between gap-4 py-3.5">
-    <a href="#haut" class="group inline-flex min-w-0 items-center gap-3 text-ink">
+  <div class="wrap flex items-center justify-between gap-2 py-3.5 sm:gap-4">
+    <a href="#haut" class="group inline-flex min-w-0 items-center gap-2.5 text-ink sm:gap-3">
       <span class="inline-flex h-[38px] w-[38px] shrink-0 items-center justify-center rounded-[10px] bg-gradient-to-br from-[#1b4677] to-[#0f2847] text-[0.92rem] font-extrabold tracking-wide text-white shadow-[0_3px_10px_rgba(20,54,93,0.25)] ring-1 ring-inset ring-white/20 transition duration-200 group-hover:scale-[1.04] dark:from-[#9ec2f0] dark:to-[#6e9cd8] dark:text-[#0b0f19] dark:ring-white/30" aria-hidden="true">{site.initials}</span>
       <span class="flex min-w-0 flex-col leading-tight">
-        <strong class="truncate text-[0.98rem]">{site.name}</strong>
+        <strong class="truncate text-[0.98rem] max-sm:text-[0.86rem]">{site.name}</strong>
         <small class="truncate text-[0.78rem] text-muted">{site.role}</small>
       </span>
     </a>
 
-    <div class="flex shrink-0 items-center gap-2.5 md:gap-5">
+    <div class="flex shrink-0 items-center gap-2 md:gap-5">
       <nav class="hidden md:flex md:items-center md:gap-x-6" aria-label="Navigation principale">
         {nav.map((n) => (
           <a href={n.href} class="relative py-1 text-[0.93rem] font-semibold text-muted transition hover:text-brand after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-brand after:transition-all hover:after:w-full">

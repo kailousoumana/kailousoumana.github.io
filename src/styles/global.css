@@ -117,6 +117,7 @@ body {
     @apply rounded-md border border-line bg-chip px-2.5 py-1 text-[0.8rem] font-semibold text-body;
   }
   .chip-major { @apply bg-brand-soft border-brand/20 text-brand; }
+  .chip-notion { @apply border-dashed bg-transparent font-medium text-muted; }
 
   .btn {
     @apply inline-flex items-center gap-2 rounded-[10px] px-5 py-3 text-[0.94rem] font-semibold transition duration-200 hover:-translate-y-0.5;
@@ -138,15 +139,6 @@ body {
     text-align: left;
   }
 
-  @media (min-width: 640px) {
-    .text-justified,
-    .bullets li {
-      text-align: justify;
-      text-justify: inter-word;
-      hyphens: auto;
-      -webkit-hyphens: auto;
-    }
-  }
   .bullets li::before {
     content: "";
     @apply absolute left-0 top-[9px] h-1.5 w-1.5 rounded-full bg-brand;

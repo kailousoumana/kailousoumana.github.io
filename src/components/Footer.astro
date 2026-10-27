@@ -23,10 +23,24 @@ const year = new Date().getFullYear();
 
   <a
     href="#haut"
-    class="fixed bottom-6 right-6 z-[900] flex h-11 w-11 items-center justify-center rounded-[10px] bg-brand text-on-brand shadow-[0_6px_20px_rgba(20,54,93,0.32)] transition hover:-translate-y-0.5 hover:opacity-90"
+    id="to-top"
+    class="pointer-events-none fixed bottom-6 right-6 z-[900] flex h-11 w-11 items-center justify-center rounded-[10px] bg-brand text-on-brand opacity-0 shadow-[0_6px_20px_rgba(20,54,93,0.32)] transition hover:-translate-y-0.5 hover:opacity-90"
     aria-label="Retour en haut"
     title="Retour en haut"
   >
     <Icon name="up" class="h-5 w-5" />
   </a>
 </footer>
+
+<script>
+  // Le bouton n'apparaît qu'après un défilement significatif
+  const toTop = document.getElementById('to-top');
+  const update = () => {
+    const show = window.scrollY > 600;
+    toTop?.classList.toggle('opacity-0', !show);
+    toTop?.classList.toggle('pointer-events-none', !show);
+    if (toTop) toTop.tabIndex = show ? 0 : -1;
+  };
+  window.addEventListener('scroll', update, { passive: true });
+  update();
+</script>
