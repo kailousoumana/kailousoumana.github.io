@@ -172,7 +172,7 @@ export const experience = [
     title: 'Ingénieur développeur des solutions web et mobiles',
     badge: { label: 'Poste actuel', tone: 'ok' },
     bullets: [
-      "Développement de services backend et d'API REST (Spring Boot, NestJS, FastAPI, Symfony) pour des plateformes de paiement, de monnaie électronique et des systèmes métiers.",
+      "Conception et développement de services backend sécurisés et d'API REST (Spring Boot, NestJS, FastAPI, Symfony) pour des plateformes de paiement, de monnaie électronique et des systèmes métiers ; architecture microservices, API Gateway et événements Kafka (patron Outbox).",
       "Développement d'interfaces web en Angular et Twig (portails, consoles d'administration) ; accompagnement des équipes frontend, bonnes pratiques et revues de code.",
       'Mise en place de pipelines GitLab CI/CD, conteneurisation Docker et déploiement Kubernetes (Kustomize) pour les environnements local et de test.',
       "Intégration de services d'IA pour la vérification d'identité : OCR, reconnaissance faciale et détection de vivacité.",
@@ -219,15 +219,15 @@ export const levelLegend: { level: Level; label: string }[] = [
 
 export const skills = [
   { icon: 'code', title: 'Backend & API', items: [['Spring Boot (Java)', 'prod'], ['NestJS (TypeScript)', 'prod'], ['FastAPI (Python)', 'prod'], ['Symfony / Twig (PHP)', 'prod'], ['API REST', 'prod']] },
-  { icon: 'phone', title: 'Frontend & Web', items: [['Angular', 'prod'], ['TypeScript', 'prod'], ['RxJS', 'prod'], ['HTML5 / CSS3 / SCSS', 'prod'], ['Bootstrap', 'prod']] },
+  { icon: 'monitor', title: 'Frontend & Web', items: [['Angular', 'prod'], ['TypeScript', 'prod'], ['RxJS', 'prod'], ['HTML5 / CSS3 / SCSS', 'prod'], ['Bootstrap', 'prod']] },
   { icon: 'database', title: 'Données & Messagerie', items: [['PostgreSQL', 'prod'], ['MySQL', 'prod'], ['Redis', 'prod'], ['TypeORM', 'prod'], ['Apache Kafka', 'proto'], ['Flyway', 'proto']] },
   { icon: 'server', title: 'DevOps & Exploitation', items: [['Docker', 'prod'], ['GitLab CI/CD', 'prod'], ['Linux', 'prod'], ['Nginx', 'prod'], ['PM2', 'prod'], ['Git', 'prod'], ['Kubernetes (Kustomize)', 'proto'], ['Gitleaks / Kubeconform', 'proto']] },
-  { icon: 'shield', title: 'Sécurité & Identité', items: [['JWT (RS256)', 'prod'], ['Keycloak', 'proto'], ['OAuth2', 'proto'], ['OpenID Connect', 'proto'], ['HashiCorp Vault', 'proto']] },
+  { icon: 'shield', title: 'Sécurité & Identité', items: [['JWT (RS256)', 'prod'], ['OAuth2 / OpenID Connect', 'prod'], ['RBAC & AES-256', 'prod'], ['Keycloak', 'proto'], ['HashiCorp Vault', 'proto']] },
   { icon: 'scan', title: 'IA : OCR & Biométrie', items: [['PaddleOCR', 'prod'], ['InsightFace (ONNX)', 'prod'], ['Tesseract', 'prod'], ['AWS Textract', 'prod'], ['Silent-Face-Anti-Spoofing', 'prod']] },
-  { icon: 'file', title: 'Qualité & méthodes', items: [['Tests (JUnit / Mockito, Jest)', 'prod'], ['Revues de code', 'prod'], ['Documentation OpenAPI', 'prod'], ['SOLID & architecture hexagonale', 'prod'], ['Agile / Scrum', 'prod']] },
+  { icon: 'check', title: 'Qualité & méthodes', items: [['Tests (JUnit / Mockito, Jest)', 'prod'], ['Revues de code', 'prod'], ['Documentation OpenAPI', 'prod'], ['SOLID & architecture hexagonale', 'prod'], ['Agile / Scrum', 'prod']] },
 ] as { icon: string; title: string; items: [string, Level][] }[];
 
-export const notions: string[] = ['Oracle Database & PL/SQL', 'GitHub Actions', 'Jenkins', 'RAG & IA générative'];
+export const notions: string[] = ['Oracle Database & PL/SQL', 'GitHub Actions', 'Jenkins', 'RAG, Assistants conversationnels & IA générative'];
 
 export const degrees = [
   {
